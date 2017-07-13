@@ -1,0 +1,432 @@
+@charset "UTF-8";
+/* Scss Document */
+
+/*----------------------------------------------
+variable
+----------------------------------------------*/
+
+$color-key:#0080cc;
+$color-sub:#eb6100;
+$color-base:#313131;
+
+$fontsize-base:16px;
+$fontcolor-base:#1d1c1c;
+$line-height:1.6;
+
+$site-width:1110px;
+$padding-vertical:15px;
+$padding-horizontal:15px;
+$maxcol:12;
+$glid-width: $site-width + $padding-horizontal * 2;
+
+@mixin media_query_tablet{
+  @media (min-width: 768px) and (max-width: $site-width - 1){
+    @content;
+  }
+}
+@mixin media_query_sp{
+  @media (max-width:767px){
+    @content;
+  }
+}
+
+/*----------------------------------------------
+SCSS
+----------------------------------------------*/
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+  margin: 0;
+  padding: 0;
+	color: $fontcolor-base;
+  font-family: 'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: $fontsize-base;
+	position: relative;
+}
+* {
+  box-sizing: border-box;
+}
+html, body, #wrapper {
+  height: 100%;
+	min-height: 100%;
+}
+#wrapper {
+  z-index: 1;
+  background: #fff;
+}
+figure {
+  margin: 0 0 $padding-vertical;
+  @include media_query_sp{
+    width: 100% !important;
+    text-align: center;
+  }
+}
+figcaption {
+  margin-top: 5px;
+  font-size: $fontsize-base * 0.857;
+  color: $fontcolor-base * 0.6;
+}
+img {
+	max-width: 100%;
+	height: auto;
+  vertical-align: bottom;
+}
+.btn.focus, .btn:focus, .btn:hover {
+  outline:none;
+}
+a, a img, button {
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+ul>li {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+section {
+  padding: 50px 0;
+}
+a {
+  text-decoration: none;
+  &:link {
+    color: #0066cc;
+  }
+  &:hover {
+    color: #ffba00;
+    img {
+      opacity: .8;
+    }
+  }
+}
+table {
+  width: 100%;
+  margin-bottom: 50px;
+  border-collapse: collapse;
+  border-top: solid 1px #dcdcdc;
+  caption {
+    padding: 15px 20px;
+    background: #e3ebf0;
+    border-bottom: solid 1px #fff;
+    font-size: 20px;
+    text-align: left;
+  }
+  th, td {
+    padding: 20px;
+    border-bottom: solid 1px #dcdcdc;
+    vertical-align: top;
+    @include media_query_sp{
+      width: 100%;
+      display: block;
+      border-right: none;
+    }
+  }
+  th {
+    color: $color-base;
+    text-align: left;
+    background: #f3f7f9;
+    border-right: solid 1px #dcdcdc;
+  }
+  th:last-child {
+    border-right: none;
+  }
+  td {
+    border-right: solid 1px #dcdcdc;
+  }
+  td:last-child {
+    border-right: none;
+  }
+	td img {
+		vertical-align: middle;
+	}
+	&.breakTable, &.breakTable tbody, &.breakTable tr, &.breakTable th, &.breakTable td, &.breakTable caption{
+		@include media_query_tablet{
+			display: block;
+			width: 100%;
+		}
+		@include media_query_sp{
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+.article {
+  font-size: $fontsize-base;
+  line-height: $line-height;
+  h1, h2, h3, h4, h5, h6 {
+    margin: $padding-vertical * 2 0;
+    font-weight: 600;
+    line-height: $line-height;
+  }
+  h1 {
+    font-size: $fontsize-base * 1.875;
+    @include media_query_tablet{
+      font-size: $fontsize-base * 1.75;
+    }
+    @include media_query_sp{
+      font-size: $fontsize-base * 1.625;
+    }
+  }
+  h2 {
+    font-size: $fontsize-base * 1.75;
+    @include media_query_tablet{
+      font-size: $fontsize-base * 1.625;
+    }
+    @include media_query_sp{
+      font-size: $fontsize-base * 1.5;
+    }
+  }
+  h3 {
+    font-size: $fontsize-base * 1.625;
+		@include media_query_tablet{
+			font-size: $fontsize-base * 1.5;
+		}
+		@include media_query_sp{
+			font-size: $fontsize-base * 1.375;
+		}
+  }
+  h4 {
+    font-size: $fontsize-base * 1.5;
+		@include media_query_tablet{
+			font-size: $fontsize-base * 1.375;
+		}
+		@include media_query_sp{
+			font-size: $fontsize-base * 1.25;
+		}
+  }
+  h5 {
+    font-size: $fontsize-base * 1.375;
+		@include media_query_tablet{
+			font-size: $fontsize-base * 1.25;
+		}
+		@include media_query_sp{
+			font-size: $fontsize-base * 1.125;
+		}
+  }
+  h6 {
+    font-size: $fontsize-base * 1.25;
+		@include media_query_tablet{
+			font-size: $fontsize-base * 1.125;
+		}
+		@include media_query_sp{
+			font-size: $fontsize-base;
+		}
+  }
+  p {
+    margin: $padding-vertical 0;
+    font-size: $fontsize-base;
+  }
+  ul, ol {
+    margin: $padding-vertical 0;
+  }
+  ul li {
+    list-style: disc;
+  }
+  li {
+    font-size: $fontsize-base;
+  }
+  hr {
+    border: 0;
+    border-bottom: 1px solid #898989;
+    margin: 2em 0;
+    height: 0;
+    clear: both;
+  }
+  a {
+    :link {
+      color: $color-key;
+    }
+    :hover {
+      color: $color-sub;
+    }
+  }
+  blockquote {
+    background: url(../images/bg_blockquote.png) 10px 10px no-repeat #EEE;
+    background-size: auto 20px;
+    padding: $padding-vertical $padding-horizontal;
+    margin: $padding-vertical $padding-horizontal;
+  }
+  .lead {
+    font-size: $fontsize-base * 1.125;
+  }
+  .alignleft {
+    margin-right: $padding-horizontal;
+    float: left;
+    @include media_query_sp{
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+  }
+  .alignright {
+    margin-left: $padding-horizontal;
+    float: right;
+    @include media_query_sp{
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+  }
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*----------------------------------------------
+module
+----------------------------------------------*/
+.marg0 { margin:0 !important; }
+.padd0 { padding:0 !important; }
+
+.mb0 { margin-bottom: 0 !important; }
+.mb10 { margin-bottom: 10px !important; }
+.mb15 { margin-bottom: 15px !important; }
+.mb20 { margin-bottom: 20px !important; }
+.mb30 { margin-bottom: 30px !important; }
+.mb40 { margin-bottom: 40px !important; }
+.mb50 { margin-bottom: 50px !important; }
+.mb60 { margin-bottom: 60px !important; }
+.mb70 { margin-bottom: 70px !important; }
+.mb80 { margin-bottom: 80px !important; }
+.mb90 { margin-bottom: 90px !important; }
+.mb100 { margin-bottom:100px !important; }
+
+.mt0 { margin-top:0 !important; }
+
+.txtRed { color: #F00; }
+.txtLeft { text-align: left; }
+.txtCenter { text-align: center; }
+.txtRight { text-align: right; }
+
+.pconly {
+  display: block !important;
+  @include media_query_sp{
+    display: none !important;
+  }
+}
+.sponly {
+  display: none !important;
+  @include media_query_sp{
+    display: block !important;
+  }
+}
+
+.enclosure {
+	margin: $padding-vertical 0;
+	padding: $padding-vertical $padding-horizontal;
+	border: solid 1px $color-base;
+}
+
+/*----------------------------------------------
+Form
+----------------------------------------------*/
+form {
+	.sizeXS { max-width:80px; }
+	.sizeS { max-width:150px; }
+	.sizeM { max-width:300px; }
+	.sizeL { max-width:500px; }
+	.sizeXL{ max-width:100%; }
+	.required { color: #F00; }
+	input[type="text"], input[type="email"], textarea, select {
+		width:100% !important;
+		display: block;
+		height: 34px;
+		padding: 6px 12px;
+		font-family: 'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+		font-size: $fontsize-base;
+		line-height: 1.42857143;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+		-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	}
+	textarea{
+		height:auto;
+	}
+	button, input[type="button"], input[type="reset"], input[type="submit"] {
+		width:100%;
+	}
+}
+
+/*----------------------------------------------
+grid
+----------------------------------------------*/
+.contentsWrap {}
+.container {
+	width: $site-width;
+	margin-left: auto;
+	margin-right: auto;
+  @include media_query_tablet{
+		width: 750px;
+  }
+  @include media_query_sp{
+    padding-left: $padding-horizontal;
+    padding-right: $padding-horizontal;
+		width: 100%;
+  }
+}
+.container-fluid {
+  padding-left: $padding-horizontal;
+  padding-right: $padding-horizontal;
+	margin-left: auto;
+	margin-right: auto;
+}
+.row {
+	margin-left: -$padding-horizontal;
+	margin-right: -$padding-horizontal;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  &.flexCenter {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+@mixin column($col){
+  width: 100% / $maxcol * $col;
+}
+@for $i from 1 through $maxcol {
+  .col-#{$i} {
+    @include column($i);
+		padding-left: $padding-horizontal;
+		padding-right: $padding-horizontal;
+		float: left;
+		@include media_query_sp{
+			width: 100%;
+		}
+  }
+}
+@mixin offset($col) {
+	margin-left: 100% - (100% / $maxcol * $col);
+}
+@for $i from $maxcol - 1 through 1 {
+	.col-offset-#{$maxcol - $i}{
+		@include offset($i);
+		@include media_query_sp{
+			margin-left: 0;
+		}
+	}
+}
+div[class*="col-"] *:first-child {
+  margin-top: 0;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}

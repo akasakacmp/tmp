@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* Scss Document */
+/*----------------------------------------------
+pageHead
+----------------------------------------------*/
+/*----------------------------------------------
+pageFoot
+----------------------------------------------*/
+/*----------------------------------------------
+pageTop
+----------------------------------------------*/
+.pageTop {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+}
+.pageTop a {
+  width: 40px;
+  height: 40px;
+  padding: 5px 0;
+  display: block;
+  background: #666;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+}
+.pageTop a:before {
+  content: "笆ｲ";
+  display: block;
+}
+.pageTop a:hover {
+  opacity: .5;
+}

@@ -1,0 +1,37 @@
+/* Scss Document */
+
+/*----------------------------------------------
+pageHead
+----------------------------------------------*/
+#pageHead {}
+
+/*----------------------------------------------
+pageFoot
+----------------------------------------------*/
+#pageFoot {}
+
+/*----------------------------------------------
+pageTop
+----------------------------------------------*/
+.pageTop {
+	position: fixed;
+	bottom: 50px;
+	right: 0;
+  a {
+		width: 40px;
+		height: 40px;
+    padding: 5px 0;
+    display: block;
+		background: #666;
+    color: #fff;
+		font-size: 10px;
+		text-align: center;
+		&:before {
+			content: "▲";
+			display: block;
+		}
+		&:hover {
+			opacity: .5;
+		}
+  }
+}
