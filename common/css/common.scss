@@ -27,8 +27,16 @@ pageTop
 		font-size: 10px;
 		text-align: center;
 		&:before {
-			content: "▲";
+			content: '';
+			width: 6px;
+			height: 6px;
+			border: 6px solid transparent;
+			border-bottom: 6px solid #fff;
 			display: block;
+			box-sizing: border-box;
+			position: relative;
+			top: -3px;
+			left: 14px;
 		}
 		&:hover {
 			opacity: .5;
