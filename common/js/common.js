@@ -15,4 +15,9 @@ $(function(){
     return false;
   });
   
+  //ハンバーガーメニュー
+  $('.hamburger').click(function(){
+    $(this).next().fadeToggle("500", "swing");
+  });
+  
 });

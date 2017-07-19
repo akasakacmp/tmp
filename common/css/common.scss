@@ -1,14 +1,78 @@
 /* Scss Document */
 
+$color-key:#0042ff;
+$color-sub:#ff2400;
+$color-base:#313131;
+
+$fontsize-base:16px;
+$fontcolor-base:#1d1c1c;
+$line-height:1.6;
+
+$site-width:1110px;
+$padding-vertical:15px;
+$padding-horizontal:15px;
+$maxcol:12;
+$glid-width: $site-width + $padding-horizontal * 2;
+
+$prefix: -webkit-, -moz-, -o-, '';
+
+@mixin media_query_tablet{
+  @media (min-width: 768px) and (max-width: $site-width - 1){
+    @content;
+  }
+}
+@mixin media_query_sp{
+  @media (max-width:767px){
+    @content;
+  }
+}
+@mixin transition(){
+  @each $pref in $prefix {
+    #{$pref}transition: all 0.2s ease-out 0s;
+  }
+}
+
 /*----------------------------------------------
 pageHead
 ----------------------------------------------*/
-#pageHead {}
+#pageHead {
+  padding: 10px 0;
+  border-bottom: solid 1px #ddd;
+}
+.headMenu {
+  a {
+    &:hover {
+      background: $color-key;
+      color: #fff;
+    }
+  }
+}
 
 /*----------------------------------------------
 pageFoot
 ----------------------------------------------*/
-#pageFoot {}
+#pageFoot {
+  margin-top: 50px;
+  padding: 10px 0 20px;
+  background: #ddd;
+  ul {
+    margin: 0;
+    padding: 10px 0 30px;
+    list-style: none;
+    @include media_query_sp{
+      padding: 0;
+    }
+    ul {
+      margin-left: 2em;
+      padding: 0;
+      list-style: disc;
+    }
+  }
+  small {
+    display: block;
+    text-align: center;
+  }
+}
 
 /*----------------------------------------------
 pageTop
@@ -41,5 +105,50 @@ pageTop
 		&:hover {
 			opacity: .5;
 		}
+  }
+}
+
+/*----------------------------------------------
+mainVisual
+----------------------------------------------*/
+.mainVisual {
+  width: 100%;
+  height: 500px;
+  background: url(../../images/sample.jpg) center center no-repeat;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  @include media_query_sp{
+    height: 200px;
+  }
+  &:after {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .catch {
+    color: #fff;
+    font-size: 35px;
+    z-index: 2;
+    @include media_query_sp{
+      font-size: 25px;
+    }
   }
 }
