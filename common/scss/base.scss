@@ -19,8 +19,6 @@ $padding-horizontal:15px;
 $maxcol:12;
 $glid-width: $site-width + $padding-horizontal * 2;
 
-$prefix: -webkit-, -moz-, -o-, '';
-
 @mixin media_query_tablet{
   @media (min-width: 768px) and (max-width: $site-width - 1){
     @content;
@@ -29,11 +27,6 @@ $prefix: -webkit-, -moz-, -o-, '';
 @mixin media_query_sp{
   @media (max-width:767px){
     @content;
-  }
-}
-@mixin transition(){
-  @each $pref in $prefix {
-    #{$pref}transition: all 0.2s ease-out 0s;
   }
 }
 
@@ -84,7 +77,7 @@ img {
   outline:none;
 }
 a, a img, button {
-  @include transition;
+  transition: all 0.2s ease-out 0s;
 }
 section {
   padding: 50px 0;
@@ -101,6 +94,7 @@ a {
     }
   }
 }
+
 table {
   width: 100%;
   margin-bottom: $padding-vertical;
@@ -154,25 +148,17 @@ table {
 }
 
 .horizontalMunu {
-	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-webkit-justify-content: space-between;
 	justify-content: space-between;
-  -webkit-flex-shrink: 0;
   flex-shrink: 0;
   @include media_query_sp{
     position: relative;
   }
 	.headMenu {
-		display: -webkit-flex;
 		display: flex;
-		-webkit-flex-wrap: wrap;
 		flex-wrap: wrap;
-    -webkit-align-items: center;
     align-items: center;
-		-webkit-flex-shrink: 0;
 		flex-shrink: 0;
     .hamburger {
       padding: 10px;
@@ -197,13 +183,9 @@ table {
 			margin: 0;
 			padding: 0;
 			list-style: none;
-			display: -webkit-flex;
 			display: flex;
-			-webkit-flex-wrap: wrap;
 			flex-wrap: wrap;
-			-webkit-align-items: center;
 			align-items: center;
-			-webkit-flex-shrink: 0;
 			flex-shrink: 0;
       @include media_query_sp{
         display: none;
@@ -470,10 +452,7 @@ form {
 		background-image: none;
 		border: 1px solid #ccc;
 		border-radius: 4px;
-		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-		-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-		-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 	}
 	textarea{
@@ -557,3 +536,154 @@ div[class*="col-"] *:first-child {
 	display: block;
 	clear: both;
 }
+
+/*
+---
+name: Grid system
+tag:
+  - base
+category:
+  - component
+  - component/grid
+---
+
+## 12分割のグリッド（計算苦手なのでおかしいかもしれません）
+
+```html
+<div class="row">
+  <div class="col-1" style="border: solid 1px #ddd;">col-1</div>
+  <div class="col-11" style="border: solid 1px #ddd;">col-11</div>
+  <div class="col-2" style="border: solid 1px #ddd;">col-2</div>
+  <div class="col-10" style="border: solid 1px #ddd;">col-10</div>
+  <div class="col-3" style="border: solid 1px #ddd;">col-3</div>
+  <div class="col-9" style="border: solid 1px #ddd;">col-9</div>
+  <div class="col-4" style="border: solid 1px #ddd;">col-4</div>
+  <div class="col-8" style="border: solid 1px #ddd;">col-8</div>
+  <div class="col-5" style="border: solid 1px #ddd;">col-5</div>
+  <div class="col-7" style="border: solid 1px #ddd;">col-7</div>
+  <div class="col-6" style="border: solid 1px #ddd;">col-6</div>
+  <div class="col-6" style="border: solid 1px #ddd;">col-6</div>
+  <div class="col-12" style="border: solid 1px #ddd;">col-12</div>
+</div>
+
+```
+*/
+
+/*
+---
+name: Headings
+tag:
+  - base
+category:
+  - component
+  - component/Typography
+---
+
+## 見出し
+
+```html
+<div class="article">
+  <h1>h1＠ページタイトル</h1>
+  <h2>h2＠見出しテキスト</h2>
+  <h3>h2＠見出しテキスト</h3>
+  <h4>h2＠見出しテキスト</h4>
+  <h5>h2＠見出しテキスト</h5>
+  <h6>h2＠見出しテキスト</h6>
+</div>
+
+```
+*/
+
+/*
+---
+name: Alignment classes
+tag:
+  - base
+category:
+  - component
+  - component/Typography
+---
+
+## 見出し
+
+```html
+<div class="article">
+  <p class="txtLeft">左寄せ</p>
+  <p class="txtCenter">真ん中寄せ</p>
+  <p class="txtRight">右寄せ</p>
+</div>
+
+```
+*/
+
+
+/*
+
+---
+name: Table
+tag:
+  - base
+category:
+  - component
+  - component/table
+---
+
+## 特に何も指定していないテーブル
+
+```html
+<table>
+  <caption>table caption</caption>
+  <tr>
+    <th>th text</th>
+    <td>td text</td>
+    <td>td text</td>
+  </th>
+  <tr>
+    <th>th text</th>
+    <td>td text</td>
+    <td>td text</td>
+  </th>
+  <tr>
+    <th>th text</th>
+    <td>td text</td>
+    <td>td text</td>
+  </th>
+</table>
+```
+*/
+
+/*
+---
+name: break Table
+tag:
+  - base
+category:
+  - component
+  - component/table
+---
+
+## スマホで表示するとセルが分割されるテーブル
+
+```html
+<div class="breakTable">
+  <table>
+    <caption>breakTable caption</caption>
+    <tr>
+      <th>th text</th>
+      <td>td text</td>
+      <td>td text</td>
+    </th>
+    <tr>
+      <th>th text</th>
+      <td>td text</td>
+      <td>td text</td>
+    </th>
+    <tr>
+      <th>th text</th>
+      <td>td text</td>
+      <td>td text</td>
+    </th>
+  </table>
+</div>
+```
+*/
