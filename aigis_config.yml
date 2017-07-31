@@ -1,7 +1,7 @@
 # The directory containing the source files to parse recursively
 source:
-  - ./common/scss/base.scss
-  - ./common/scss/common.scss
+  - ./_src/common/css/base.scss
+  - ./_src/common/css/common.scss
 
 # The directory that aigis will build to
 dest: ./styleguide
