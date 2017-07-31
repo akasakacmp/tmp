@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="../../../aigis_assets/css/highlight/okadia.css" rel="stylesheet">
+    <link href="../../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/common/dist/css/base.css" rel="stylesheet">
+    <link href="/common/dist/css/common.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="aigis-container">
+      <div class="aigis-sidemenu">
+        <header class="aigis-header"><a href="../../../index.html">Styleguide</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="..\..\..\category\component\index.html">component</a><ul data-path-depth="1"><li data-path-depth="1"><a href="..\..\..\category\component\Typography\index.html">Typography</a></li><li data-path-depth="1"><a href="..\..\..\category\component\grid\index.html">grid</a></li><li data-path-depth="1"><a href="..\..\..\category\component\table\index.html" data-tree-current>table</a></li></ul></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../../tag/base/index.html" class="aigis-tags__item aigis-tags__item--base">base</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__body">
+          <nav>
+            <h2 class="aigis-module__heading">Components</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#Table">Table</a></li>
+              <li class="aigis-moduleList__item"><a href="#break Table">break Table</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="Table" class="aigis-module__heading">Table</h2>
+            <div class="aigis-module__filepath">/common\scss\base.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--base">base</li>
+            </ul><h2 id="-">特に何も指定していないテーブル</h2>
+<div class="aigis-preview">
+  <table>
+    <caption>table caption</caption>
+    <tr>
+        <th>th text</th>
+        <td>td text</td>
+        <td>td text</td>
+        </th>
+        <tr>
+            <th>th text</th>
+            <td>td text</td>
+            <td>td text</td>
+            </th>
+            <tr>
+                <th>th text</th>
+                <td>td text</td>
+                <td>td text</td>
+                </th>
+</table></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>caption</span><span class="token punctuation">></span></span>table caption<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>caption</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>th text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>th text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>th text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+</code></pre>
+
+          </div>
+          <div class="aigis-module">
+            <h2 id="break Table" class="aigis-module__heading">break Table</h2>
+            <div class="aigis-module__filepath">/common\scss\base.scss</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--base">base</li>
+            </ul><h2 id="-">スマホで表示するとセルが分割されるテーブル</h2>
+<div class="aigis-preview">
+  <div class="breakTable">
+    <table>
+        <caption>breakTable caption</caption>
+        <tr>
+            <th>th text</th>
+            <td>td text</td>
+            <td>td text</td>
+            </th>
+            <tr>
+                <th>th text</th>
+                <td>td text</td>
+                <td>td text</td>
+                </th>
+                <tr>
+                    <th>th text</th>
+                    <td>td text</td>
+                    <td>td text</td>
+                    </th>
+    </table>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>breakTable<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>caption</span><span class="token punctuation">></span></span>breakTable caption<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>caption</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>th text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>th text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>th text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>td text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+
+          </div>
+          <footer class="aigis-footer">Last update at 2017/07/31 11:08</footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
