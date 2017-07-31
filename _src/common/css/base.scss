@@ -11,6 +11,7 @@ $color-base:#313131;
 
 $fontsize-base:16px;
 $fontcolor-base:#1d1c1c;
+$fontfamily-base:'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 $line-height:1.6;
 
 $site-width:1110px;
@@ -41,7 +42,7 @@ body {
   margin: 0;
   padding: 0;
 	color: $fontcolor-base;
-  font-family: 'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: $fontfamily-base;
 	font-size: $fontsize-base;
 	position: relative;
 }
@@ -444,7 +445,7 @@ form {
 		display: block;
 		height: 34px;
 		padding: 6px 12px;
-		font-family: 'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+		font-family: $fontfamily-base;
 		font-size: $fontsize-base;
 		line-height: 1.42857143;
 		color: #555;
@@ -461,7 +462,7 @@ form {
 	button, input[type="button"], input[type="reset"], input[type="submit"] {
 		width:100%;
     font-size: $fontsize-base;
-    font-family: 'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-family: $fontfamily-base;
 	}
 }
 

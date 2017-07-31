@@ -95,7 +95,7 @@ gulp.task('connect', function() {
 });
 
 //ŠÄŽ‹‘ÎÛ‚ðÝ’è
-gulp.task('watch', () => {
+gulp.task('watch', function () {
   return gulp.src([dir.src + '/{,**/}*.scss'], function () {
     return gulp.start(['sass', 'aigis']);
   });
