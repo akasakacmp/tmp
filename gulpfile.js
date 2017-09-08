@@ -1,67 +1,43 @@
 // JavaScript Document
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require("gulp-autoprefixer");
-var cleanCSS = require('gulp-clean-css');
-var aigis = require('gulp-aigis');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
-var mozjpeg  = require('imagemin-mozjpeg');
-var changed  = require('gulp-changed');
-var connect = require('gulp-connect');
-var plumber = require('gulp-plumber');
-var notify  = require('gulp-notify');
+var gulp = require('gulp');  //gulpå¤§æœ¬å¿…é ˆ
+var sass = require('gulp-sass');  //sassã‚’cssã«å¤‰æ›
+var autoprefixer = require("gulp-autoprefixer");  //cssã«ãƒ™ãƒ³ãƒ€ãƒ¼ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ä»˜ä¸
+var imagemin = require('gulp-imagemin');  //ç”»åƒåœ§ç¸®
+var pngquant = require('imagemin-pngquant');  //ç”»åƒåœ§ç¸®pngç”¨
+var mozjpeg  = require('imagemin-mozjpeg');  //ç”»åƒåœ§ç¸®jpgç”¨
+var changed  = require('gulp-changed');  //ãƒ•ã‚¡ã‚¤ãƒ«ã®å·®ã‚’ç¢ºèªï¼ˆç”»åƒåœ§ç¸®ã§ä½¿ç”¨ï¼‰
+var connect = require('gulp-connect');  //localhost:8080ã§ãƒšãƒ¼ã‚¸ã‚’ç¢ºèªã§ãã‚‹ã‚ˆã†ã«
+var plumber = require('gulp-plumber');  //ã‚¨ãƒ©ãƒ¼ãŒå‡ºã¦ã‚‚gulpãŒæ­¢ã¾ã‚‰ãªã„ã‚ˆã†ã«
+var notify  = require('gulp-notify');  //ã‚¨ãƒ©ãƒ¼å†…å®¹ã‚’ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã§çŸ¥ã‚‰ã›ã‚‹
 
-//ƒfƒBƒŒƒNƒgƒŠİ’è
+//ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªè¨­å®š
 var dir = {
-  src : '_src', //ì‹Æ—pƒfƒBƒŒƒNƒgƒŠ
-  dist : 'dist' //”[•i—pƒfƒBƒŒƒNƒgƒŠ
+  src : '_src', //å…ƒç”»åƒæ ¼ç´ç”¨
+  dist : './' //ç´å“ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
 }
 
-//scss‚Ìİ’è
+//scssã®è¨­å®š
 gulp.task('sass', function() {
-  gulp.src(dir.src + '/{,**/}*.scss') //ì‹Æ‘ÎÛ
+  gulp.src([dir.dist + '/{,**/}*.scss', '!node_modules/**/*.scss']) //ä½œæ¥­å¯¾è±¡
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
-    .pipe(sass()) //css‚É•ÏŠ·
-    .pipe(autoprefixer()) //ƒxƒ“ƒ_[ƒvƒŒƒtƒBƒbƒNƒX•t—^
-    .pipe(cleanCSS()) //ƒR[ƒhk¬
-    .pipe(gulp.dest(dir.src)) //ì‹Æ—pƒfƒBƒŒƒNƒgƒŠ‚Écss‘‚«o‚µ
-    .pipe(gulp.dest(dir.dist)) //”[•i—pƒfƒBƒŒƒNƒgƒŠ‚Écss‘‚«o‚µ
-    .pipe(connect.reload());  //ƒuƒ‰ƒEƒUƒŠƒ[ƒh
+    .pipe(sass()) //cssã«å¤‰æ›
+    .pipe(autoprefixer()) //ãƒ™ãƒ³ãƒ€ãƒ¼ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ä»˜ä¸
+    .pipe(gulp.dest(dir.dist)) //cssæ›¸ãå‡ºã—
+    .pipe(connect.reload());  //ãƒ–ãƒ©ã‚¦ã‚¶ãƒªãƒ­ãƒ¼ãƒ‰
 });
 
-//aigis‚Ìİ’è
-gulp.task('aigis', function() {
-  return gulp.src('./aigis_config.yml') //aigisİ’èƒtƒ@ƒCƒ‹i“Ç‚İ‚İ‘ÎÛ‚Æ‚©‚±‚±‚Ìƒtƒ@ƒCƒ‹‚Åw’èj
-    .pipe(plumber({
-      errorHandler: notify.onError('rror: <%= error.message %>')
-    }))
-    .pipe(aigis());
-});
-
-//js‚Ìİ’è
-gulp.task('minify-js', function() {
-  return gulp.src(dir.src + '/{,**/}*.js') //ì‹Æ‘ÎÛ
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(uglify()) //ƒR[ƒhk¬
-    .pipe(gulp.dest(dir.dist)); //”[•i—pƒfƒBƒŒƒNƒgƒŠ‚Écss‘‚«o‚µ
-});
-
-//image‚Ìİ’è
+//imageã®è¨­å®š
 gulp.task('imagemin', function() {
-  var srcGlob = dir.src + '/{,**/}*.+(jpg|jpeg|png|gif|svg)'; //ì‹Æ—pƒfƒBƒŒƒNƒgƒŠ
-  var dstGlob = dir.dist; //”[•i—pƒfƒBƒŒƒNƒgƒŠ
-  return gulp.src(srcGlob) //ì‹Æ‘ÎÛ
+  var srcGlob = dir.src + '/{,**/}*.+(jpg|jpeg|png|gif|svg)'; //ä½œæ¥­ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+  var dstGlob = dir.dist; //ç´å“ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+  return gulp.src(srcGlob) //ä½œæ¥­å¯¾è±¡
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
-    .pipe(changed(dstGlob)) //ì‹Æ—pƒfƒBƒŒƒNƒgƒŠ‚Ìƒtƒ@ƒCƒ‹‚ª”[•i—pƒfƒBƒŒƒNƒgƒŠ‚Ìƒtƒ@ƒCƒ‹‚æ‚èV‚µ‚¢‚©Šm”F
-    .pipe(imagemin([ //ƒIƒvƒVƒ‡ƒ“‚É‡‚í‚¹‚Ä‰æ‘œˆ³k
+    .pipe(changed(dstGlob)) //ä½œæ¥­ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒç´å“ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚ˆã‚Šæ–°ã—ã„ã‹ç¢ºèª
+    .pipe(imagemin([ //ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã«åˆã‚ã›ã¦ç”»åƒåœ§ç¸®
        pngquant({
          quality: '65-80',
          speed: 1,
@@ -76,43 +52,24 @@ gulp.task('imagemin', function() {
        imagemin.gifsicle()
      ]
   ))
-  .pipe(gulp.dest(dstGlob)); //”[•i—pƒfƒBƒŒƒNƒgƒŠ‚Éimage‘‚«o‚µ
+  .pipe(gulp.dest(dstGlob)); //ç´å“ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«imageæ›¸ãå‡ºã—
 });
 
-//htmlƒtƒ@ƒCƒ‹ƒRƒs[
-gulp.task('copy', function () {
-  return gulp.src(dir.src + '/{,**/}*.html') //ì‹Æ—pƒfƒBƒŒƒNƒgƒŠ
-    .pipe(gulp.dest( dir.dist )) //”[•i—pƒfƒBƒŒƒNƒgƒŠ‚Éhtml‘‚«o‚µ
-    .pipe(connect.reload());  //ƒuƒ‰ƒEƒUƒŠƒ[ƒh
-});
-
-//localhost:8080‚ğ—LŒø‰»
+//localhost:8080ã‚’æœ‰åŠ¹åŒ–
 gulp.task('connect', function() {
   connect.server({
-    root: './dist', //ƒ[ƒJƒ‹ƒT[ƒo[—§‚¿ã‚°‚Ìƒ‹[ƒgƒfƒBƒŒƒNƒgƒŠ
+    root: '', //ãƒ­ãƒ¼ã‚«ãƒ«ã‚µãƒ¼ãƒãƒ¼ç«‹ã¡ä¸Šã’æ™‚ã®ãƒ«ãƒ¼ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
     livereload: true
   });
 });
 
-//ŠÄ‹‘ÎÛ‚ğİ’è
+//ç›£è¦–å¯¾è±¡ã‚’è¨­å®š
 gulp.task('watch', function () {
-  return gulp.src([dir.src + '/{,**/}*.scss'], function () {
-    return gulp.start(['sass', 'aigis']);
-  });
-  return gulp.src([dir.src + '/{,**/}*.js'], function () {
-    return gulp.start(['minify-js']);
-  });
-  return gulp.src([dir.src + '/{,**/}*.+(jpg|jpeg|png|gif|svg)'], function () {
-    return gulp.start(['imagemin']);
-  });
-  return gulp.src([dir.src + '/{,**/}*.html'], function () {
-    return gulp.start(['copy']);
+  return gulp.src([dir.dist + '/{,**/}*.scss', '!node_modules/**/*.scss'], function () {
+    return gulp.start(['sass']);
   });
 });
 
-gulp.task('default', ['sass', 'aigis', 'minify-js', 'imagemin', 'copy', 'connect', 'watch'], function(){
-  gulp.watch(dir.src + '/{,**/}*.scss', ['sass', 'aigis']);
-  gulp.watch(dir.src + '/{,**/}*.js', ['minify-js']);
-  gulp.watch(dir.src + '/{,**/}*.html', ['copy']);
-  gulp.watch(dir.src + '/{,**/}*.+(jpg|jpeg|png|gif|svg)', ['imagemin']);
+gulp.task('default', ['watch', 'sass', 'imagemin', 'connect'], function(){
+  gulp.watch(dir.dist + '/{,**/}*.scss', ['sass']);
 });
