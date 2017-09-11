@@ -13,12 +13,12 @@ $fontsize-base:16px;
 $fontcolor-base:#1d1c1c;
 $fontfamily-base:'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 $line-height:1.6;
+$text-margin-bottom:15px;
 
 $site-width:1110px;
-$padding-vertical:15px;
-$padding-horizontal:15px;
+$glid-space:15px;
 $maxcol:12;
-$glid-width: $site-width + $padding-horizontal * 2;
+$glid-width: $site-width + $glid-space * 2;
 
 @mixin media_query_tablet{
   @media (min-width: 768px) and (max-width: $site-width - 1){
@@ -45,6 +45,7 @@ body {
   font-family: $fontfamily-base;
 	font-size: $fontsize-base;
 	position: relative;
+  -webkit-text-size-adjust: 100%;
 }
 * {
   box-sizing: border-box;
@@ -58,7 +59,7 @@ html, body, #wrapper {
   background: #fff;
 }
 figure {
-  margin: 0 0 $padding-vertical;
+  margin: 0 0 $text-margin-bottom;
   @include media_query_sp{
     width: 100% !important;
     text-align: center;
@@ -75,7 +76,7 @@ img {
   vertical-align: bottom;
 }
 .btn.focus, .btn:focus, .btn:hover {
-  outline:none;
+  outline: none;
 }
 a, a img, button {
   transition: all 0.2s ease-out 0s;
@@ -98,7 +99,7 @@ a {
 
 table {
   width: 100%;
-  margin-bottom: $padding-vertical;
+  margin-bottom: $text-margin-bottom;
   border-collapse: collapse;
   caption {
     padding: 15px 20px;
@@ -134,7 +135,7 @@ table {
 @include media_query_sp{
   .responsiveTable {
     width: 100%;
-    margin-bottom: $padding-vertical;
+    margin-bottom: $text-margin-bottom;
     border: solid 1px #dcdcdc;
     overflow-y: hidden;
     table {
@@ -217,7 +218,7 @@ table {
   font-size: $fontsize-base;
   line-height: $line-height;
   h1, h2, h3, h4, h5, h6 {
-    margin: $padding-vertical * 2 0;
+    margin: $text-margin-bottom * 2 0;
     font-weight: 600;
     line-height: $line-height;
   }
@@ -276,18 +277,18 @@ table {
 		}
   }
   p {
-    margin: $padding-vertical 0;
+    margin: $text-margin-bottom 0;
     font-size: $fontsize-base;
   }
   .notes {
     font-size: $fontsize-base * .8;
   }
   ul, ol {
-    margin: $padding-vertical 0;
+    margin: $text-margin-bottom 0;
   }
   ul {
     &.annotationList {
-      margin: $padding-vertical 0;
+      margin: $text-margin-bottom 0;
       padding: 0;
       li {
         list-style: none;
@@ -324,8 +325,8 @@ table {
   blockquote {
     background: url(../images/bg_blockquote.png) 10px 10px no-repeat #EEE;
     background-size: auto 20px;
-    padding: $padding-vertical $padding-horizontal;
-    margin: $padding-vertical $padding-horizontal;
+    padding: $text-margin-bottom $glid-space;
+    margin: $text-margin-bottom $glid-space;
     *:first-child {
       margin-top: 0;
     }
@@ -337,7 +338,7 @@ table {
     font-size: $fontsize-base * 1.125;
   }
   .alignleft {
-    margin-right: $padding-horizontal;
+    margin-right: $glid-space;
     float: left;
     @include media_query_sp{
       margin-left: auto;
@@ -346,7 +347,7 @@ table {
     }
   }
   .alignright {
-    margin-left: $padding-horizontal;
+    margin-left: $glid-space;
     float: right;
     @include media_query_sp{
       margin-left: auto;
@@ -401,8 +402,8 @@ module
 }
 
 .enclosure {
-	margin: $padding-vertical 0;
-	padding: $padding-vertical $padding-horizontal;
+	margin: $text-margin-bottom 0;
+	padding: $text-margin-bottom $glid-space;
 	border: solid 1px $color-base;
   *:first-child {
     margin-top: 0;
@@ -463,6 +464,9 @@ form {
 		width:100%;
     font-size: $fontsize-base;
     font-family: $fontfamily-base;
+    @include media_query_sp{
+      margin-bottom: 5px;
+    }
 	}
 }
 
@@ -478,20 +482,20 @@ grid
 		width: 750px;
   }
   @include media_query_sp{
-    padding-left: $padding-horizontal;
-    padding-right: $padding-horizontal;
+    padding-left: $glid-space;
+    padding-right: $glid-space;
 		width: 100%;
   }
 }
 .container-fluid {
-  padding-left: $padding-horizontal;
-  padding-right: $padding-horizontal;
+  padding-left: $glid-space;
+  padding-right: $glid-space;
 	margin-left: auto;
 	margin-right: auto;
 }
 .row {
-	margin-left: -$padding-horizontal;
-	margin-right: -$padding-horizontal;
+	margin-left: -$glid-space;
+	margin-right: -$glid-space;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-wrap: wrap;
@@ -509,8 +513,8 @@ grid
 @for $i from 1 through $maxcol {
   .col-#{$i} {
     @include column($i);
-		padding-left: $padding-horizontal;
-		padding-right: $padding-horizontal;
+		padding-left: $glid-space;
+		padding-right: $glid-space;
 		float: left;
 		@include media_query_sp{
 			width: 100%;
@@ -537,154 +541,3 @@ div[class*="col-"] *:first-child {
 	display: block;
 	clear: both;
 }
-
-/*
----
-name: Grid system
-tag:
-  - base
-category:
-  - component
-  - component/grid
----
-
-## 12分割のグリッド（計算苦手なのでおかしいかもしれません）
-
-```html
-<div class="row">
-  <div class="col-1" style="border: solid 1px #ddd;">col-1</div>
-  <div class="col-11" style="border: solid 1px #ddd;">col-11</div>
-  <div class="col-2" style="border: solid 1px #ddd;">col-2</div>
-  <div class="col-10" style="border: solid 1px #ddd;">col-10</div>
-  <div class="col-3" style="border: solid 1px #ddd;">col-3</div>
-  <div class="col-9" style="border: solid 1px #ddd;">col-9</div>
-  <div class="col-4" style="border: solid 1px #ddd;">col-4</div>
-  <div class="col-8" style="border: solid 1px #ddd;">col-8</div>
-  <div class="col-5" style="border: solid 1px #ddd;">col-5</div>
-  <div class="col-7" style="border: solid 1px #ddd;">col-7</div>
-  <div class="col-6" style="border: solid 1px #ddd;">col-6</div>
-  <div class="col-6" style="border: solid 1px #ddd;">col-6</div>
-  <div class="col-12" style="border: solid 1px #ddd;">col-12</div>
-</div>
-
-```
-*/
-
-/*
----
-name: Headings
-tag:
-  - base
-category:
-  - component
-  - component/Typography
----
-
-## 見出し
-
-```html
-<div class="article">
-  <h1>h1＠ページタイトル</h1>
-  <h2>h2＠見出しテキスト</h2>
-  <h3>h2＠見出しテキスト</h3>
-  <h4>h2＠見出しテキスト</h4>
-  <h5>h2＠見出しテキスト</h5>
-  <h6>h2＠見出しテキスト</h6>
-</div>
-
-```
-*/
-
-/*
----
-name: Alignment classes
-tag:
-  - base
-category:
-  - component
-  - component/Typography
----
-
-## 見出し
-
-```html
-<div class="article">
-  <p class="txtLeft">左寄せ</p>
-  <p class="txtCenter">真ん中寄せ</p>
-  <p class="txtRight">右寄せ</p>
-</div>
-
-```
-*/
-
-
-/*
-
----
-name: Table
-tag:
-  - base
-category:
-  - component
-  - component/table
----
-
-## 特に何も指定していないテーブル
-
-```html
-<table>
-  <caption>table caption</caption>
-  <tr>
-    <th>th text</th>
-    <td>td text</td>
-    <td>td text</td>
-  </th>
-  <tr>
-    <th>th text</th>
-    <td>td text</td>
-    <td>td text</td>
-  </th>
-  <tr>
-    <th>th text</th>
-    <td>td text</td>
-    <td>td text</td>
-  </th>
-</table>
-```
-*/
-
-/*
----
-name: break Table
-tag:
-  - base
-category:
-  - component
-  - component/table
----
-
-## スマホで表示するとセルが分割されるテーブル
-
-```html
-<div class="breakTable">
-  <table>
-    <caption>breakTable caption</caption>
-    <tr>
-      <th>th text</th>
-      <td>td text</td>
-      <td>td text</td>
-    </th>
-    <tr>
-      <th>th text</th>
-      <td>td text</td>
-      <td>td text</td>
-    </th>
-    <tr>
-      <th>th text</th>
-      <td>td text</td>
-      <td>td text</td>
-    </th>
-  </table>
-</div>
-```
-*/

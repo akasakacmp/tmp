@@ -5,13 +5,14 @@ $color-base:#313131;
 
 $fontsize-base:16px;
 $fontcolor-base:#1d1c1c;
+$fontfamily-base:'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 $line-height:1.6;
+$text-margin-bottom:15px;
 
 $site-width:1110px;
-$padding-vertical:15px;
-$padding-horizontal:15px;
+$glid-space:15px;
 $maxcol:12;
-$glid-width: $site-width + $padding-horizontal * 2;
+$glid-width: $site-width + $glid-space * 2;
 
 @mixin media_query_tablet{
   @media (min-width: 768px) and (max-width: $site-width - 1){
@@ -23,6 +24,9 @@ $glid-width: $site-width + $padding-horizontal * 2;
     @content;
   }
 }
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 /*----------------------------------------------
 pageHead
