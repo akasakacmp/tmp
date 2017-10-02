@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/* Scss Document */
+
+/*PCメインスタイルシート*/
 
 /*----------------------------------------------
 variable
@@ -20,13 +21,18 @@ $glid-space:15px;
 $maxcol:12;
 $glid-width: $site-width + $glid-space * 2;
 
+@mixin media_query_pc{
+  @media (min-width: $site-width){
+    @content;
+  }
+}
 @mixin media_query_tablet{
   @media (min-width: 768px) and (max-width: $site-width - 1){
     @content;
   }
 }
 @mixin media_query_sp{
-  @media (max-width:767px){
+  @media (max-width: 767px){
     @content;
   }
 }
@@ -530,6 +536,14 @@ grid
 		@include media_query_sp{
 			margin-left: 0;
 		}
+	}
+}
+@for $i from 1 through $maxcol {
+	.order#{$i} {
+		order: $i;
+    @include media_query_sp {
+      order: 0;
+    }
 	}
 }
 div[class*="col-"] *:first-child {
