@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<!--<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>タイトル。32文字以内。</title>
+<meta name="description" content="コンテンツの簡単な説明。120字以内。ページごとにそのページの詳細。">
+<meta name="author" content="製作者の名前or会社名">
+<link rel="canonical" href="ページの正規URL。">
+
+<!--OGP-->
+<meta property="og:type" content="コンテンツのメディアのタイプ。website or article">
+<meta property="og:url" content="ページの正規URL。これは、セッション変数、利用者識別パラメータ、カウンタといった装飾を含めない。">
+<meta property="og:title" content="サイト名などのブランド情報を含まないタイトル。">
+<meta property="og:description" content="<meta name='description'>と同じにする。">
+<meta property="og:image" content="シェアされた際に表示される画像のURL。600x315 or 1200x630 px。8MB 以内。">
+<meta property="og:site_name" content="サイト名">
+<meta property="og:locale" content="サポートしている言語。html の lang にあわせる。日本語の場合は ja_JP、英語の場合は en_US。">
+
+<!--Facebook-->
+<meta property="fb:app_id" content="App-ID（15文字の半角数字）">
+
+<!--Twitter (summary card)＠下記とどちらか-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="カードのフッターで使用されるウェブサイトの Twitter ユーザー名。@xxxxx">
+<meta name="twitter:title" content="サイト名などのブランド情報を含まないタイトル。">
+<meta name="twitter:description" content="<meta name='description'>と同じにする。">
+<meta name="twitter:image" content="シェアされた際に表示される画像のURL。アスペクト比は 1:1。144x144 〜 4096x4096 px。5MB 以内。">
+
+<!--Twitter (summary card with large image)＠上記とどちらか-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="カードのフッターで使用されるウェブサイトの Twitter ユーザー名。@xxxxx">
+<meta name="twitter:title" content="サイト名などのブランド情報を含まないタイトル。">
+<meta name="twitter:description" content="<meta name='description'>と同じにする。">
+<meta name="twitter:image" content="シェアされた際に表示される画像のURL。アスペクト比は 2:1。300x157 〜 4096x4096 px。5MB 以内。">
+
+<!--favicon-->
+<link rel="icon" type="image/vnd.microsoft.icon" href="画像 URL。">
+
+<!--Web Clip-->
+<link rel="apple-touch-icon" sizes="57x57" href="iPhone 3G">
+<link rel="apple-touch-icon" sizes="72x72" href="非Retina版のiPad 2、iPad miniの用、iOS 6以前">
+<link rel="apple-touch-icon" sizes="76x76" href="非Retina版のiPad 2、iPad miniの用、iOS 7以降">
+<link rel="apple-touch-icon" sizes="114x114" href="Retina版のiPhone、iPod touch用、iOS 6以前">
+<link rel="apple-touch-icon" sizes="120x120" href="Retina版のiPhone、iPod touch用、iOS 7以降">
+<link rel="apple-touch-icon" sizes="144x144" href="Retina版のiPad、iPad mini用、iOS 6以前">
+<link rel="apple-touch-icon" sizes="152x152" href="Retina版のiPad、iPad mini用、iOS 7以降">
+<link rel="apple-touch-icon" sizes="180x180" href="iPhone 6 plus">
+<link rel="stylesheet" href="common/css/common.css">
+<!--[if lt IE 9]>
+<script src="assets/js/html5shiv.js"></script>
+<script src="assets/js/respond.js"></script>
+<![endif]-->
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<!--#include virtual="/_include/_header.html" -->
+  <div class="contentsWrap article">
+    <div class="container">
+      <h2>[h2]jsを使用しないタブ</h2>
+      <input id="tab-1-ctrl" class="tab-radios" type="radio" name="tab-radios" checked>
+      <input id="tab-2-ctrl" class="tab-radios" type="radio" name="tab-radios">
+      <input id="tab-3-ctrl" class="tab-radios" type="radio" name="tab-radios">
+      <ul class="tabs-list">
+        <li id="li-for-tab-1"><label class="tab-label" for="tab-1-ctrl">タブ1</label></li>
+        <li id="li-for-tab-2"><label class="tab-label" for="tab-2-ctrl">タブ2</label></li>
+        <li id="li-for-tab-3"><label class="tab-label" for="tab-3-ctrl">タブ3</label></li>
+      </ul>
+      <div class="tabs">
+        <div id="tab-1">
+          <div class="inner">
+            <h3>[h3]タブコンテンツ1</h3>
+            <p>スタイルの当て方でスマホメニューやポップアップなどにも流用可</p>
+            <p>[p]段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト段落テキスト</p>
+          </div>
+        </div>
+        <div id="tab-2">
+          <div class="inner">
+            <h3>[h3]タブコンテンツ2</h3>
+            <ul>
+              <li>[ul li]リスト</li>
+              <li>[ul li]リスト
+                <ol>
+                  <li>[ol li]リスト</li>
+                  <li>[ol li]リスト</li>
+                  <li>[ol li]リスト</li>
+                </ol>
+              </li>
+              <li>[ul li]リスト</li>
+            </ul>
+          </div>
+        </div>
+        <div id="tab-3">
+          <div class="inner">
+            <h3>[h3]タブコンテンツ3</h3>
+            <table>
+              <tr>
+                <th>[th]見出し</th>
+                <td>[td]テキスト</td>
+                <td>[td]テキスト</td>
+              </tr>
+              <tr>
+                <th>[th]見出し</th>
+                <td>[td]テキスト</td>
+                <td>[td]テキスト</td>
+              </tr>
+              <tr>
+                <th>[th]見出し</th>
+                <td>[td]テキスト</td>
+                <td>[td]テキスト</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pageTop"><a href="#wrapper">TOP</a></div>
+<!--#include virtual="/_include/_footer.html" -->
+</div>
+<script src="common/js/common.js"></script>
+</body>
+</html>

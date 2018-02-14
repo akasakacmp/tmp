@@ -1,0 +1,62 @@
+@charset "UTF-8";
+$tab-num:3;//タブの数
+/*----------------------------------------------
+common
+----------------------------------------------*/
+.tab-radios {
+  display: none;
+}
+label.tab-label {
+  width: 100%;
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+.tabs {
+  .inner {
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 600ms;
+    overflow-y: hidden;
+  }
+}
+/*----------------------------------------------
+style
+----------------------------------------------*/
+.tabs-list {
+  margin: 0 0 60px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-shrink: 0;
+  @include media_query_sp{
+    margin: 0 0 30px;
+  }
+  li {
+    margin: 0 3px 0 0;
+    display: inline-block;
+  }
+  label {
+    &.tab-label {
+      padding: 10px 25px;
+      border-radius: 4px;
+      border: solid 2px rgba($color-key, .1);
+      transition-property: border, color;
+      &:hover {
+        border: solid 2px $color-key;
+        color: $color-key;
+      }
+    }
+  }
+}
+@for $i from 1 through $tab-num {
+  #tab-#{$i}-ctrl:checked ~ .tabs #tab-#{$i} .inner {
+    max-height: 100%;
+    opacity: 1;
+  }
+  #tab-#{$i}-ctrl:checked ~ .tabs-list #li-for-tab-#{$i} .tab-label {
+    border: solid 2px $color-key;
+    color: $color-key;
+  }
+}
