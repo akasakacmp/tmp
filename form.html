@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<!--<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">-->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>タイトル。32文字以内。</title>
+<meta name="description" content="コンテンツの簡単な説明。120字以内。ページごとにそのページの詳細。">
+<meta name="author" content="製作者の名前or会社名">
+<link rel="canonical" href="ページの正規URL。">
+
+<!--OGP-->
+<meta property="og:type" content="コンテンツのメディアのタイプ。website or article">
+<meta property="og:url" content="ページの正規URL。これは、セッション変数、利用者識別パラメータ、カウンタといった装飾を含めない。">
+<meta property="og:title" content="サイト名などのブランド情報を含まないタイトル。">
+<meta property="og:description" content="<meta name='description'>と同じにする。">
+<meta property="og:image" content="シェアされた際に表示される画像のURL。600x315 or 1200x630 px。8MB 以内。">
+<meta property="og:site_name" content="サイト名">
+<meta property="og:locale" content="サポートしている言語。html の lang にあわせる。日本語の場合は ja_JP、英語の場合は en_US。">
+
+<!--Facebook-->
+<meta property="fb:app_id" content="App-ID（15文字の半角数字）">
+
+<!--Twitter (summary card)＠下記とどちらか-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="カードのフッターで使用されるウェブサイトの Twitter ユーザー名。@xxxxx">
+<meta name="twitter:title" content="サイト名などのブランド情報を含まないタイトル。">
+<meta name="twitter:description" content="<meta name='description'>と同じにする。">
+<meta name="twitter:image" content="シェアされた際に表示される画像のURL。アスペクト比は 1:1。144x144 〜 4096x4096 px。5MB 以内。">
+
+<!--Twitter (summary card with large image)＠上記とどちらか-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="カードのフッターで使用されるウェブサイトの Twitter ユーザー名。@xxxxx">
+<meta name="twitter:title" content="サイト名などのブランド情報を含まないタイトル。">
+<meta name="twitter:description" content="<meta name='description'>と同じにする。">
+<meta name="twitter:image" content="シェアされた際に表示される画像のURL。アスペクト比は 2:1。300x157 〜 4096x4096 px。5MB 以内。">
+
+<!--favicon-->
+<link rel="icon" type="image/vnd.microsoft.icon" href="画像 URL。">
+
+<!--Web Clip-->
+<link rel="apple-touch-icon" sizes="57x57" href="iPhone 3G">
+<link rel="apple-touch-icon" sizes="72x72" href="非Retina版のiPad 2、iPad miniの用、iOS 6以前">
+<link rel="apple-touch-icon" sizes="76x76" href="非Retina版のiPad 2、iPad miniの用、iOS 7以降">
+<link rel="apple-touch-icon" sizes="114x114" href="Retina版のiPhone、iPod touch用、iOS 6以前">
+<link rel="apple-touch-icon" sizes="120x120" href="Retina版のiPhone、iPod touch用、iOS 7以降">
+<link rel="apple-touch-icon" sizes="144x144" href="Retina版のiPad、iPad mini用、iOS 6以前">
+<link rel="apple-touch-icon" sizes="152x152" href="Retina版のiPad、iPad mini用、iOS 7以降">
+<link rel="apple-touch-icon" sizes="180x180" href="iPhone 6 plus">
+<link rel="stylesheet" href="common/css/common.css">
+<!--[if lt IE 9]>
+<script src="assets/js/html5shiv.js"></script>
+<script src="assets/js/respond.js"></script>
+<![endif]-->
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/jquery.formtowizard.js"></script>
+<script>
+  $(function(){
+    var $exForm = $('#exForm');
+      $exForm.formToWizard({
+        submitButton: 'SaveAccount',
+        nextBtnClass: 'btn btnKey next',
+        prevBtnClass: 'btn prev',
+        buttonTag:    'button',
+        progress: function (i, count) {
+          $('#progress-complete').width(''+(i/count*100)+'%');
+        }
+    });
+    $('#SaveAccount').on('click', function(){
+      var name1 = $('input[name="name1"]').val();
+      var name2 = $('input[name="name2"]').val();
+      var mail = $('input[name="mail"]').val();
+      var tel = $('input[name="tel"]').val();
+      var zip = $('input[name="zip"]').val();
+      var address = $('input[name="address"]').val();
+      $('.name1').text(name1);
+      $('.name2').text(name2);
+      $('.mail').text(mail);
+      $('.tel').text(tel);
+      $('.zip').text(zip);
+      $('.address').text(address);
+      $('#Confirmation').fadeIn();
+    });
+    $('#close').on('click',function(){
+      $('#Confirmation').fadeOut();
+    });
+  });
+</script>
+</head>
+<body>
+<div id="wrapper"> 
+  <!--#include virtual="/_include/_header.html" -->
+  <div class="contentsWrap article">
+    <div class="container">
+      <h2>[h2]form</h2>
+      <div id="progress">
+        <div id="progress-complete"></div>
+      </div>
+      <form id="exForm">
+        <fieldset>
+          <legend>Step 1</legend>
+          <table class="breakTable">
+            <tr>
+              <th><label for="name1">姓</label></th>
+              <td><input type="text" name="name1" id="name1"></td>
+            </tr>
+            <tr>
+              <th><label for="name2">名</label></th>
+              <td><input type="text" name="name2" id="name2"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset>
+          <legend>Step 2</legend>
+          <table class="breakTable">
+            <tr>
+              <th><label for="mail">メールアドレス</label></th>
+              <td><input type="email" name="mail" id="mail"></td>
+            </tr>
+            <tr>
+              <th><label for="tel">電話番号</label></th>
+              <td><input type="text" name="tel" id="tel"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset>
+          <legend>Step 3</legend>
+          <table class="breakTable">
+            <tr>
+              <th><label for="zip">郵便番号</label></th>
+              <td><input type="text" name="zip" id="zip"></td>
+            </tr>
+            <tr>
+              <th><label for="address">住所</label></th>
+              <td><input type="text" name="address" id="address"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <button id="SaveAccount" type="button" class="btn btnKey">確認</button>
+<div id="Confirmation">
+  <button id="close"></button>
+  <div class="inner">
+    <table class="breakTable">
+      <tr>
+        <th>姓</th>
+        <td class="name1"></td>
+      </tr>
+      <tr>
+        <th>名</th>
+        <td class="name2"></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td class="mail"></td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td class="tel"></td>
+      </tr>
+      <tr>
+        <th>郵便番号</th>
+        <td class="zip"></td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td class="address"></td>
+      </tr>
+    </table>
+    <button id="submitBtn" type="submit" class="btn btnSub">送信</button>
+  </div>
+</div>
+      </form>
+    </div>
+  </div>
+  <div class="pageTop"><a href="#wrapper">TOP</a></div>
+  <!--#include virtual="/_include/_footer.html" --> 
+</div>
+<script src="common/js/common.js"></script>
+</body>
+</html>

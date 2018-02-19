@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/*----------------------------------------------
+style
+----------------------------------------------*/
+#progress {
+  position: relative;
+  height: 5px;
+  background-color: #eee;
+  margin-bottom: 20px;
+}
+#progress-complete {
+  border: 0;
+  position: absolute;
+  height: 5px;
+  min-width: 10px;
+  background-color: $color-key;
+  transition: width .2s ease-in-out;
+}
+#exForm {
+  fieldset {
+    border: solid 2px $color-key + 150;
+    .commands {
+      display: flex;
+      justify-content: space-between;
+      flex-shrink: 0;
+      margin-bottom: 0;
+    }
+    #step0commands {
+      justify-content: flex-end;
+    }
+  }
+  table {
+    th {
+      width: 25%;
+    }
+  }
+}
+#Confirmation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  #close {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    background: rgba(0,0,0,.5);
+    border: none;
+  }
+  .inner {
+    width: 80%;
+    padding: 15px;
+    position: relative;
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+    background: #fff;
+    text-align: center;
+    z-index: 12;
+    td {
+      text-align: left;
+    }
+    #submitBtn {
+      margin: 0 auto;
+    }
+  }
+}
