@@ -53,16 +53,18 @@ style
     z-index: 11;
     background: rgba(0,0,0,.5);
     border: none;
+    cursor: pointer;
   }
   .inner {
     width: 80%;
-    padding: 15px;
+    padding: 30px;
     position: relative;
     top: 10%;
     right: 10%;
     bottom: 10%;
     left: 10%;
     background: #fff;
+    border-radius: 4px;
     text-align: center;
     z-index: 12;
     td {
