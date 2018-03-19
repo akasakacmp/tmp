@@ -6,7 +6,7 @@ variable
 
 $color-key:#0042ff;
 $color-sub:#ff2400;
-$color-base:#313131;
+$color-base:#999;
 
 $fontsize-base:10px;
 $fontcolor-base:#333;
@@ -99,6 +99,9 @@ a {
       opacity: .8;
     }
   }
+  &:visited {
+    color: $color-key;
+  }
 }
 
 .horizontalMunu {
@@ -164,6 +167,38 @@ a {
 			}
 		}
 	}
+}
+
+.breadcrumb {
+  padding: 15px 0;
+  background: $color-base * 1.5;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 1.2rem;
+      &:after {
+        content: ">";
+        display: inline-block;
+        margin: 0 5px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      a {
+        color: $fontcolor-base;
+      }
+    }
+  }
 }
 
 .article {
@@ -276,17 +311,20 @@ a {
   }
   hr {
     border: 0;
-    border-bottom: 1px solid #898989;
+    border-bottom: 1px solid $color-base;
     margin: 2em 0;
     height: 0;
     clear: both;
   }
   a {
-    :link {
+    &:link {
       color: $color-key;
     }
-    :hover {
+    &:hover {
       color: $color-sub;
+    }
+    &:visited {
+      color: $color-key;
     }
   }
   blockquote {
@@ -345,7 +383,7 @@ a {
       font-size: 1.6rem;
     }
     th {
-      color: $color-base;
+      color: $fontcolor-base;
       text-align: left;
       background: #f3f7f9;
     }
@@ -400,7 +438,17 @@ module
 .mb90 { margin-bottom: 90px !important; }
 .mb100 { margin-bottom:100px !important; }
 
-.mt0 { margin-top:0 !important; }
+.mt0 { margin-top: 0 !important; }
+.mt10 { margin-top: 10px !important; }
+.mt20 { margin-top: 20px !important; }
+.mt30 { margin-top: 30px !important; }
+.mt40 { margin-top: 40px !important; }
+.mt50 { margin-top: 50px !important; }
+.mt60 { margin-top: 60px !important; }
+.mt70 { margin-top: 70px !important; }
+.mt80 { margin-top: 80px !important; }
+.mt90 { margin-top: 90px !important; }
+.mt100 { margin-top: 100px !important; }
 
 .txtRed { color: #F00; }
 .txtLeft { text-align: left; }
@@ -436,21 +484,44 @@ module
   background: #eee;
   border: solid 1px #ccc;
   border-radius: 3px;
+  display: inline-block;
   &:hover, &:focus {
     opacity: .5;
     cursor: pointer;
   }
   &.btnKey {
-    background: rgba($color-key,.8);
+    background: $color-key;
+    border-color: $color-key;
     color: #fff;
   }
   &.btnSub {
-    background: rgba($color-sub,.8);
+    background: $color-sub;
+    border-color: $color-sub;
     color: #fff;
+  }
+  &.btnKeyOut {
+    background: none;
+    border-color: $color-key;
+    color: $color-key;
+  }
+  &.btnSubOut {
+    background: none;
+    border-color: $color-sub;
+    color: $color-sub;
   }
   &.btnBlock {
     width: 100%;
     display: block;
+  }
+  &.btnS {
+    padding: 10px;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  &.btnL {
+    padding: 10px 20px;
+    font-size: 2rem;
+    line-height: 1;
   }
 }
 
@@ -465,7 +536,7 @@ form {
 	.sizeXL{ max-width:100%; }
 	.required { color: #F00; }
 	input[type="text"], input[type="email"], textarea, select {
-		width:100% !important;
+		width:100%;
 		display: block;
 		height: 38px;
 		padding: 6px 12px;
@@ -500,7 +571,7 @@ grid
 	margin-left: auto;
 	margin-right: auto;
   @include media_query_tablet{
-		width: 750px;
+		width: 768px - ($glid-space * 2);
   }
   @include media_query_sp{
     padding-left: $glid-space;
@@ -517,20 +588,23 @@ grid
 .row {
 	margin-left: -$glid-space;
 	margin-right: -$glid-space;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
-  -webkit-flex-shrink: 0;
   flex-shrink: 0;
   &.flexCenter {
-    -webkit-justify-content: center;
     justify-content: center;
+  }
+  &.flexEnd {
+    justify-content: flex-end;
+  }
+  &.flexBetween {
+    justify-content: space-between;
   }
 }
 .rowFull {
   width: 100%;
   display: flex;
+  flex-wrap: nowrap;
   flex-shrink: 0;
   @include media_query_sp{
     display: block;
