@@ -36,4 +36,10 @@ $(function(){
     $('#popImage').remove();
   });
   
+  //アコーディオン
+  $('.accordion .item').removeClass('active');
+  $('.accordion .title').on('click', function(){
+    $(this).parent('.item').toggleClass('active');
+  });
+  
 });

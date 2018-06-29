@@ -60,3 +60,57 @@ style
     color: $color-key;
   }
 }
+
+.accordion {
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-key;
+    cursor: pointer;
+    transition: all 0.2s ease-out 0s;
+    position: relative;
+    padding-left: 2.5rem;
+    &:hover {
+      opacity: .5;
+    }
+    &:before {
+      content: "";
+      width: 1.5rem;
+      height: 1px;
+      background: $color-key;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+    }
+    &:after {
+      content: "";
+      width: 1.5rem;
+      height: 1px;
+      background: $color-key;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: rotate(90deg);
+      transition: all 0.2s ease-out 0s;
+    }
+  }
+  .content {
+    display: none;
+    opacity: 0;
+    transition: all 0.2s ease-out 0s;
+    overflow: hidden;
+  }
+  .active {
+    .title {
+      &:after {
+        transform: rotate(0);
+      }
+    }
+    .content {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
