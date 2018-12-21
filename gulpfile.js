@@ -18,7 +18,8 @@ var dir = {
 
 //scssの設定
 gulp.task('sass', function() {
-  return gulp.src('./common/css/*.scss') //作業対象
+  var srcCss = [dir.dist + '{,**/}*.scss', '!node_modules/**/*.scss']; //作業対象
+  return gulp.src(srcCss)
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
@@ -27,7 +28,7 @@ gulp.task('sass', function() {
       grid: true
     })) //ベンダープレフィックス付与
     .pipe(cleanCSS())  //コード縮小
-    .pipe(gulp.dest('./common/css/')) //css書き出し
+    .pipe(gulp.dest(dir.dist)) //css書き出し
     .pipe(connect.reload());  //ブラウザリロード
 });
 
@@ -75,7 +76,7 @@ gulp.task('connect', function() {
 
 //監視対象を設定
 gulp.task('watch', function () {
-  gulp.watch('./common/css/*.scss', gulp.task('sass'));
+  gulp.watch([dir.dist + '{,**/}*.scss', '!node_modules/**/*.scss'], gulp.task('sass'));
 });
 
 gulp.task(
