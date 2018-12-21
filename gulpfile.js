@@ -39,7 +39,7 @@ gulp.task('imagemin_jpg_gif_svg', function() {
   var imageminOptions = {
     optimizationLevel: 7
   };
-  gulp.src(srcGlob) //作業対象
+  return gulp.src(srcGlob) //作業対象
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
