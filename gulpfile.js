@@ -81,13 +81,11 @@ gulp.task('watch', function () {
 
 gulp.task(
   'default', 
-  gulp.series(
-    gulp.parallel(
-      'sass',
-      'imagemin_jpg_gif_svg',
-      'imagemin_png',
-      'connect',
-      'watch'
-    )
+  gulp.parallel(
+    'sass',
+    'imagemin_jpg_gif_svg',
+    'imagemin_png',
+    'connect',
+    'watch'
   )
 )
