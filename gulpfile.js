@@ -2,8 +2,6 @@ var gulp = require('gulp');  //gulp大本必須
 var sass = require('gulp-sass');  //sassをcssに変換
 var autoprefixer = require("gulp-autoprefixer");  //cssにベンダープレフィックス付与
 var cleanCSS = require('gulp-clean-css');  //css圧縮
-var uglify = require('gulp-uglify');  //js圧縮
-var concat = require('gulp-concat');  //ファイル結合
 var imagemin = require('gulp-imagemin');  //画像圧縮
 var pngquant = require('imagemin-pngquant');  //画像圧縮png用
 var changed  = require('gulp-changed');  //ファイルの差を確認（画像圧縮で使用）
@@ -17,14 +15,10 @@ var dir = {
   src : '_src', //元データ格納用
   dist : './' //納品用ディレクトリ
 };
-var js = {
-  src : './_src/common/js/*.js', //元データ格納用
-  dist : './common/js' //納品用ディレクトリ
-};
 
 //scssの設定
 gulp.task('sass', function() {
-  gulp.src([dir.dist + '/{,**/}*.scss', '!node_modules/**/*.scss']) //作業対象
+  return gulp.src('./common/css/*.scss') //作業対象
     .pipe(plumber({
       errorHandler: notify.onError('Error: <%= error.message %>')
     }))
@@ -33,19 +27,8 @@ gulp.task('sass', function() {
       grid: true
     })) //ベンダープレフィックス付与
     .pipe(cleanCSS())  //コード縮小
-    .pipe(gulp.dest(dir.dist)) //css書き出し
+    .pipe(gulp.dest('./common/css/')) //css書き出し
     .pipe(connect.reload());  //ブラウザリロード
-});
-
-//jsの設定
-gulp.task('common_min_js', function() {
-  gulp.src(js.src) //作業対象
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(concat('common.min.js')) //結合後のファイル名
-    .pipe(uglify()) //js圧縮
-    .pipe(gulp.dest(js.dist)); //納品用ディレクトリにjs書き出し
 });
 
 //imageの設定
@@ -92,15 +75,18 @@ gulp.task('connect', function() {
 
 //監視対象を設定
 gulp.task('watch', function () {
-  return gulp.src([dir.dist + '/{,**/}*.scss', '!node_modules/**/*.scss'], function () {
-    return gulp.start(['sass']);
-  });
-  return gulp.src(js.src, function () {
-    return gulp.start(['common_min_js']);
-  });
+  gulp.watch('./common/css/*.scss', gulp.task('sass'));
 });
 
-gulp.task('default', ['watch', 'sass', 'common_min_js', 'imagemin_jpg_gif_svg', 'imagemin_png', 'connect'], function(){
-  gulp.watch(dir.dist + '/{,**/}*.scss', ['sass']);
-  gulp.watch(js.src, ['common_min_js']);
-});
+gulp.task(
+  'default', 
+  gulp.series(
+    gulp.parallel(
+      'sass',
+      'imagemin_jpg_gif_svg',
+      'imagemin_png',
+      'connect',
+      'watch'
+    )
+  )
+)

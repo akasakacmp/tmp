@@ -71,7 +71,7 @@ figure {
 figcaption {
   margin-top: 5px;
   font-size: 1.3rem;
-  color: $fontcolor-base * 0.6;
+  color: lighten($fontcolor-base,40%);
 }
 img {
 	max-width: 100%;
@@ -171,7 +171,7 @@ a {
 
 .breadcrumb {
   padding: 15px 0;
-  background: $color-base * 1.5;
+  background: lighten($color-base, 30%);
   ul {
     margin: 0;
     padding: 0;

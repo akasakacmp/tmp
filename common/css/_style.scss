@@ -11,7 +11,7 @@ pageHead
 .headMenu {
   a {
     &:hover {
-      background: $color-key + 80;
+      background: lighten($color-key, 10%);
       color: #fff;
     }
   }

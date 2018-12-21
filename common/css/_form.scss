@@ -18,7 +18,7 @@ style
 }
 #exForm {
   fieldset {
-    border: solid 2px $color-key + 150;
+    border: solid 2px lighten($color-key, 30%);
     .commands {
       display: flex;
       justify-content: space-between;
