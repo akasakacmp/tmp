@@ -1,41 +1,6 @@
 @charset "UTF-8";
 
 /*----------------------------------------------
-variable
-----------------------------------------------*/
-
-$color-key:#0042ff;
-$color-sub:#ff2400;
-$color-base:#999;
-
-$fontsize-base:10px;
-$fontcolor-base:#333;
-$fontfamily-base: '-apple-system', 'BlinkMacSystemFont', 'Open Sans', "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-$line-height:1.6;
-$text-margin-bottom:15px;
-
-$site-width:1110px;
-$glid-space:15px;
-$maxcol:12;
-$glid-width: $site-width + $glid-space * 2;
-
-@mixin media_query_pc{
-  @media (min-width: $site-width){
-    @content;
-  }
-}
-@mixin media_query_tablet{
-  @media (min-width: 768px) and (max-width: $site-width - 1){
-    @content;
-  }
-}
-@mixin media_query_sp{
-  @media (max-width: 767px){
-    @content;
-  }
-}
-
-/*----------------------------------------------
 SCSS
 ----------------------------------------------*/
 
