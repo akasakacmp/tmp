@@ -72,38 +72,6 @@ iframe {
   max-width: 100%;
 }
 
-.breadcrumb {
-  padding: 15px 0;
-  background: lighten($color-base, 30%);
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-    li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 1.2rem;
-      &:after {
-        content: ">";
-        display: inline-block;
-        margin: 0 5px;
-      }
-      &:last-child {
-        &:after {
-          display: none;
-        }
-      }
-      a {
-        color: $fontcolor-base;
-      }
-    }
-  }
-}
-
 .article {
   font-size: 1.4rem;
   line-height: $line-height;
@@ -441,66 +409,32 @@ module
 }
 
 /*----------------------------------------------
-Form
-----------------------------------------------*/
-form {
-	.sizeXS { max-width:80px; }
-	.sizeS { max-width:150px; }
-	.sizeM { max-width:300px; }
-	.sizeL { max-width:500px; }
-	.sizeXL{ max-width:100%; }
-	.required { color: #F00; }
-	input[type="text"], input[type="email"], input[type="tel"], textarea, select {
-		width:100%;
-		display: block;
-		height: 38px;
-		padding: 6px 12px;
-		font-family: $fontfamily-base;
-		font-size: 1.6rem;
-		line-height: 38px;
-		color: #555;
-		background-color: #fff;
-		background-image: none;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-	}
-	textarea{
-		height:auto;
-	}
-	button, input[type="button"], input[type="reset"], input[type="submit"] {
-    font-size: 1.6rem;
-    font-family: $fontfamily-base;
-    line-height: 1.6rem;
-    @include media_query_sp{
-      margin-bottom: 5px;
-    }
-	}
-}
-
-/*----------------------------------------------
 grid
 ----------------------------------------------*/
 .contentsWrap {}
 .container {
-	width: $site-width;
+  width: 100%;
+	max-width: $site-width;
 	margin-left: auto;
 	margin-right: auto;
   @include media_query_tablet{
+		width: 100%;
+    max-width: none;
     padding-left: $glid-space;
     padding-right: $glid-space;
-		width: 100%;
   }
   @include media_query_sp{
+		width: 100%;
+    max-width: none;
     padding-left: $glid-space;
     padding-right: $glid-space;
-		width: 100%;
   }
 }
 .container-fluid {
-  padding-left: $glid-space;
-  padding-right: $glid-space;
 	margin-left: auto;
 	margin-right: auto;
+  padding-left: $glid-space;
+  padding-right: $glid-space;
 }
 .row {
 	margin-left: -$glid-space;

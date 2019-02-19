@@ -1,77 +1,39 @@
 @charset "UTF-8";
+
 /*----------------------------------------------
-style
+Form
 ----------------------------------------------*/
-#progress {
-  position: relative;
-  height: 5px;
-  background-color: #eee;
-  margin-bottom: 20px;
-}
-#progress-complete {
-  border: 0;
-  position: absolute;
-  height: 5px;
-  min-width: 10px;
-  background-color: $color-key;
-  transition: width .2s ease-in-out;
-}
-#exForm {
-  fieldset {
-    border: solid 2px lighten($color-key, 30%);
-    .commands {
-      display: flex;
-      justify-content: space-between;
-      flex-shrink: 0;
-      margin-bottom: 0;
+form {
+	.sizeXS { max-width:80px; }
+	.sizeS { max-width:150px; }
+	.sizeM { max-width:300px; }
+	.sizeL { max-width:500px; }
+	.sizeXL{ max-width:100%; }
+	.required { color: #F00; }
+	input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+		width:100%;
+		display: block;
+		height: 38px;
+		padding: 6px 12px;
+		font-family: $fontfamily-base;
+		font-size: 1.6rem;
+		line-height: 38px;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	textarea{
+		height:auto;
+	}
+	button, input[type="button"], input[type="reset"], input[type="submit"] {
+    font-size: 1.6rem;
+    font-family: $fontfamily-base;
+    line-height: 1.6rem;
+    appearance: none;
+    @include media_query_sp{
+      margin-bottom: 5px;
     }
-    #step0commands {
-      justify-content: flex-end;
-    }
-  }
-  table {
-    th {
-      width: 25%;
-    }
-  }
-}
-#Confirmation {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  display: none;
-  #close {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 11;
-    background: rgba(0,0,0,.5);
-    border: none;
-    cursor: pointer;
-  }
-  .inner {
-    width: 80%;
-    padding: 30px;
-    position: relative;
-    top: 10%;
-    right: 10%;
-    bottom: 10%;
-    left: 10%;
-    background: #fff;
-    border-radius: 4px;
-    text-align: center;
-    z-index: 12;
-    td {
-      text-align: left;
-    }
-    #submitBtn {
-      margin: 0 auto;
-    }
-  }
+	}
 }

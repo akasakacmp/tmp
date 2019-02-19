@@ -22,12 +22,12 @@ $glid-width: $site-width + $glid-space * 2;
 $calc-sp: '767 * 100vw';  //例）width: calc(100 / #{$calc-sp});
 
 @mixin media_query_pc{
-  @media (min-width: $site-width){
+  @media (min-width: $glid-width + ($glid-space * 2) + 1){
     @content;
   }
 }
 @mixin media_query_tablet{
-  @media (min-width: 768px) and (max-width: $site-width - 1){
+  @media (min-width: 768px) and (max-width: $glid-width + ($glid-space * 2)){
     @content;
   }
 }

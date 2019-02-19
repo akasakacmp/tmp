@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/*----------------------------------------------
+breadcrumb
+----------------------------------------------*/
+.breadcrumb {
+  padding: 15px 0;
+  background: lighten($color-base, 30%);
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 1.2rem;
+      &:after {
+        content: ">";
+        display: inline-block;
+        margin: 0 5px;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      a {
+        color: $fontcolor-base;
+      }
+    }
+  }
+}
