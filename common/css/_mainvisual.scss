@@ -17,7 +17,7 @@ mainVisual
   align-items: center;
   flex-shrink: 0;
   @include media_query_sp{
-    height: 200px;
+    height: calc(400 / #{$calc-sp});
   }
   &:after {
     width: 100%;
@@ -34,7 +34,7 @@ mainVisual
     font-size: 35px;
     z-index: 2;
     @include media_query_sp{
-      font-size: 25px;
+      font-size: calc(50 / #{$calc-sp});
     }
   }
 }

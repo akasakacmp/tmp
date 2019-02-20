@@ -23,6 +23,13 @@ form {
 		background-image: none;
 		border: 1px solid #ccc;
 		border-radius: 4px;
+    @include media_query_sp{
+      height: calc(76 / #{$calc-sp});
+      padding: calc(12 / #{$calc-sp}) calc(24 / #{$calc-sp});
+      font-size: calc(29 / #{$calc-sp});
+      line-height: calc(76 / #{$calc-sp});
+      border-radius: calc(8 / #{$calc-sp});
+    }
 	}
 	textarea{
 		height:auto;
@@ -33,7 +40,9 @@ form {
     line-height: 1.6rem;
     appearance: none;
     @include media_query_sp{
-      margin-bottom: 5px;
+      margin-bottom: calc(10 / #{$calc-sp});
+      font-size: calc(29 / #{$calc-sp});
+      line-height: calc(29 / #{$calc-sp});
     }
 	}
 }

@@ -8,6 +8,11 @@ pageFoot
   padding: 10px 0 20px;
   background: #ddd;
   font-size: 1.6rem;
+  @include media_query_sp{
+    margin-top: calc(100 / #{$calc-sp});
+    padding: calc(20 / #{$calc-sp}) 0 calc(40 / #{$calc-sp});
+    font-size: calc(29 / #{$calc-sp});
+  }
   ul {
     margin: 0;
     padding: 10px 0 30px;
@@ -34,6 +39,9 @@ pageTop
 	position: fixed;
 	bottom: 50px;
 	right: 0;
+  @include media_query_sp{
+    bottom: calc(100 / #{$calc-sp});
+  }
   a {
 		width: 40px;
 		height: 40px;
@@ -43,6 +51,12 @@ pageTop
     color: #fff;
 		font-size: 10px;
 		text-align: center;
+    @include media_query_sp{
+      width: calc(80 / #{$calc-sp});
+      height: calc(80 / #{$calc-sp});
+      padding: calc(10 / #{$calc-sp}) 0;
+      font-size: calc(20 / #{$calc-sp});
+    }
 		&:before {
 			content: '';
 			width: 6px;
@@ -54,6 +68,13 @@ pageTop
 			position: relative;
 			top: -3px;
 			left: 14px;
+      @include media_query_sp{
+        width: calc(12 / #{$calc-sp});
+        height: calc(12 / #{$calc-sp});
+        border-width: calc(12 / #{$calc-sp});
+        top: calc(-6 / #{$calc-sp});
+        left: calc(28 / #{$calc-sp});
+      }
 		}
 		&:hover {
 			opacity: .5;
