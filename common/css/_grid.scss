@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/*----------------------------------------------
+grid
+----------------------------------------------*/
+.contentsWrap {}
+.container {
+  width: 100%;
+	max-width: $site-width;
+	margin-left: auto;
+	margin-right: auto;
+  @include media_query_tablet{
+		width: 100%;
+    max-width: none;
+    padding-left: $glid-space;
+    padding-right: $glid-space;
+  }
+  @include media_query_sp{
+		width: 100%;
+    max-width: none;
+    padding-left: calc((#{$glid-space2} * 2) / #{$calc-sp});
+    padding-right: calc((#{$glid-space2} * 2) / #{$calc-sp});
+  }
+}
+.container-fluid {
+	margin-left: auto;
+	margin-right: auto;
+  padding-left: $glid-space;
+  padding-right: $glid-space;
+  @include media_query_sp{
+    padding-left: calc((#{$glid-space2} * 2) / #{$calc-sp});
+    padding-right: calc((#{$glid-space2} * 2) / #{$calc-sp});
+  }
+}
+.row {
+	margin-left: -$glid-space;
+	margin-right: -$glid-space;
+	display: flex;
+	flex-wrap: wrap;
+  flex-shrink: 0;
+  @include media_query_sp{
+    margin-left: calc((#{-$glid-space2} * 2) / #{$calc-sp});
+    margin-right: calc((#{-$glid-space2} * 2) / #{$calc-sp});
+  }
+  &.flexCenter {
+    justify-content: center;
+  }
+  &.flexEnd {
+    justify-content: flex-end;
+  }
+  &.flexBetween {
+    justify-content: space-between;
+  }
+  &.vCenter {
+    align-items: center;
+  }
+}
+.rowFull {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  @include media_query_sp{
+    display: block;
+  }
+  .col {
+    width: 100%;
+    margin-bottom: $text-margin-bottom;
+    @include media_query_sp{
+      margin-bottom: calc((#{$text-margin-bottom2} * 2) / #{$calc-sp});
+    }
+  }
+}
+@mixin column($col){
+  width: 100% / $maxcol * $col;
+}
+@for $i from 1 through $maxcol {
+  .col-#{$i} {
+    @include column($i);
+    margin-bottom: $text-margin-bottom;
+		padding-left: $glid-space;
+		padding-right: $glid-space;
+		float: left;
+		@include media_query_sp{
+			width: 100%;
+      margin-bottom: calc((#{$text-margin-bottom2} * 2) / #{$calc-sp});
+      padding-left: calc((#{$glid-space2} * 2) / #{$calc-sp});
+      padding-right: calc((#{$glid-space2} * 2) / #{$calc-sp});
+		}
+  }
+}
+@mixin offset($col) {
+	margin-left: 100% - (100% / $maxcol * $col);
+}
+@for $i from $maxcol - 1 through 1 {
+	.col-offset-#{$maxcol - $i}{
+		@include offset($i);
+		@include media_query_sp{
+			margin-left: 0;
+		}
+	}
+}
+@for $i from 1 through $maxcol {
+	.order#{$i} {
+		order: $i;
+    @include media_query_sp {
+      order: 0;
+    }
+	}
+}
+div[class*="col-"] *:first-child {
+  margin-top: 0;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}

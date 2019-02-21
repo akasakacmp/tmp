@@ -31,11 +31,14 @@ style
   display: flex;
   flex-shrink: 0;
   @include media_query_sp{
-    margin: 0 0 30px;
+    margin: 0 0 calc(60 / #{$calc-sp});
   }
   li {
     margin: 0 3px 0 0;
     display: inline-block;
+    @include media_query_sp{
+      margin: 0 calc(6 / #{$calc-sp}) 0 0;
+    }
   }
   label {
     &.tab-label {
@@ -43,9 +46,17 @@ style
       border-radius: 4px;
       border: solid 2px rgba($color-key, .1);
       transition-property: border, color;
+      @include media_query_sp{
+        padding: calc(20 / #{$calc-sp}) calc(50 / #{$calc-sp});
+        border-radius: calc(8 / #{$calc-sp});
+        border-width: calc(4 / #{$calc-sp});
+      }
       &:hover {
         border: solid 2px $color-key;
         color: $color-key;
+        @include media_query_sp{
+          border-width: calc(4 / #{$calc-sp});
+        }
       }
     }
   }
@@ -58,6 +69,9 @@ style
   #tab-#{$i}-ctrl:checked ~ .tabs-list #li-for-tab-#{$i} .tab-label {
     border: solid 2px $color-key;
     color: $color-key;
+    @include media_query_sp{
+      border-width: calc(4 / #{$calc-sp});
+    }
   }
 }
 
@@ -70,6 +84,10 @@ style
     transition: all 0.2s ease-out 0s;
     position: relative;
     padding-left: 2.5rem;
+    @include media_query_sp{
+      font-size: calc(40 / #{$calc-sp});
+      padding-left: calc(50 / #{$calc-sp});
+    }
     &:hover {
       opacity: .5;
     }
@@ -82,6 +100,10 @@ style
       position: absolute;
       left: 0;
       top: 50%;
+      @include media_query_sp{
+        width: calc(30 / #{$calc-sp});
+        height: calc(2 / #{$calc-sp});
+      }
     }
     &:after {
       content: "";
@@ -94,6 +116,10 @@ style
       top: 50%;
       transform: rotate(90deg);
       transition: all 0.2s ease-out 0s;
+      @include media_query_sp{
+        width: calc(30 / #{$calc-sp});
+        height: calc(2 / #{$calc-sp});
+      }
     }
   }
   .content {
