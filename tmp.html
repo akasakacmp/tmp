@@ -49,12 +49,16 @@
 <link rel="apple-touch-icon" sizes="144x144" href="Retina版のiPad、iPad mini用、iOS 6以前">
 <link rel="apple-touch-icon" sizes="152x152" href="Retina版のiPad、iPad mini用、iOS 7以降">
 <link rel="apple-touch-icon" sizes="180x180" href="iPhone 6 plus">
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
 <link rel="stylesheet" href="common/css/common.css">
 <!--[if lt IE 9]>
 <script src="assets/js/html5shiv.js"></script>
 <script src="assets/js/respond.js"></script>
 <![endif]-->
-<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -342,6 +346,15 @@
         <div class="col" style="border: solid 1px #ddd;">col</div>
         <div class="col" style="border: solid 1px #ddd;">col</div>
       </div>
+      <h2>slick</h2>
+      <div class="slider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true, "respondTo": "slider"}'>
+        <div><img src="//placehold.it/1200x630/cccccc/ffffff&text=SAMPLE+IMG1" alt=""></div>
+        <div><img src="//placehold.it/1200x630/cccccc/ffffff&text=SAMPLE+IMG2" alt=""></div>
+        <div><img src="//placehold.it/1200x630/cccccc/ffffff&text=SAMPLE+IMG3" alt=""></div>
+        <div><img src="//placehold.it/1200x630/cccccc/ffffff&text=SAMPLE+IMG4" alt=""></div>
+        <div><img src="//placehold.it/1200x630/cccccc/ffffff&text=SAMPLE+IMG5" alt=""></div>
+        <div><img src="//placehold.it/1200x630/cccccc/ffffff&text=SAMPLE+IMG6" alt=""></div>
+      </div>
       <h2><a href="ex.html">他スタイル</a></h2>
       <h2><a href="form.html">フォーム</a></h2>
     </div>
@@ -349,6 +362,14 @@
   <div class="pageTop"><a href="#wrapper">TOP</a></div>
 <!--#include virtual="/_include/_footer.html" -->
 </div>
+<!--slick-->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script src="common/js/common.js"></script>
+<script>
+  //slick
+  $(function(){
+    $('.slider').slick();
+  });
+</script>
 </body>
 </html>
