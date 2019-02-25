@@ -30,6 +30,7 @@ var hamburger_menu = function() {
   $('.hamburger').click(function () {
     $(this).toggleClass('active');
     $(this).next().animate({height:'toggle', opacity:'toggle'}, 'swing');
+    $('body').toggleClass('overlay');
   });
 }
 
