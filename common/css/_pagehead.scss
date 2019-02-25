@@ -4,21 +4,25 @@
 pageHead
 ----------------------------------------------*/
 #pageHead {
-  padding: 10px 0;
   border-bottom: solid 1px #ddd;
   font-size: 1.6rem;
   @include media_query_sp{
-    padding: calc(20 / #{$calc-sp}) 0;
     font-size: calc(32 / #{$calc-sp});
   }
 }
 .horizontalMunu {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-  flex-shrink: 0;
+  padding: 10px 0;
   @include media_query_sp{
-    position: relative;
+    padding: calc(20 / #{$calc-sp}) 0;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-shrink: 0;
+    @include media_query_sp{
+      position: relative;
+    }
   }
 	.headMenu {
 		display: flex;
@@ -30,9 +34,7 @@ pageHead
       @include media_query_sp{
         width: calc(50 / #{$calc-sp});
         height: calc(50 / #{$calc-sp});
-        position: absolute;
-        top: calc(20 / #{$calc-sp});
-        right: calc(30 / #{$calc-sp});
+        position: relative;
         border: none;
         padding: 0;
         display: block;
@@ -122,4 +124,10 @@ pageHead
 			}
 		}
 	}
+  &.fixed {
+    width: 100%;
+    background-color: rgba(255,255,255,.8);
+    position: fixed;
+    z-index: 1001;
+  }
 }

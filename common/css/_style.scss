@@ -53,3 +53,51 @@ style
     }
   }
 }
+.prevNext {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  .prev, .index, .next {
+    min-width: 6rem;
+    text-align: center;
+    a {
+      width: 100%;
+    }
+  }
+}
+.pagination {
+  margin-bottom: 1.5rem;
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      a {
+        padding: 10px;
+        background: #eee;
+        border: solid 1px #ccc;
+        border-right: none;
+        display: inline-block;
+        &:hover {
+          opacity: .5;
+        }
+      }
+      &:first-of-type {
+        a {
+          border-radius: 3px 0 0 3px;
+        }
+      }
+      &:last-of-type {
+        a {
+          border-right: solid 1px #ccc;
+          border-radius: 0 3px 3px 0;
+        }
+      }
+    }
+  }
+}
