@@ -7,8 +7,6 @@ $(document).ready(function() {
   proc_scroll();
   fixed_menu();
   hamburger_menu();
-  pop_image();
-  accordion();
 });
 
 $(window).on('load', function() {
