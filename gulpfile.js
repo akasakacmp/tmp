@@ -1,6 +1,8 @@
 var gulp = require('gulp');  //gulp大本必須
 var sass = require('gulp-sass');  //sassをcssに変換
-var autoprefixer = require("gulp-autoprefixer");  //cssにベンダープレフィックス付与
+var autoprefixer = require('gulp-autoprefixer');  //cssにベンダープレフィックス付与
+var crypto = require('crypto');  //乱数生成
+var replace = require('gulp-replace');  //置換
 var cleanCSS = require('gulp-clean-css');  //css圧縮
 var imagemin = require('gulp-imagemin');  //画像圧縮
 var pngquant = require('imagemin-pngquant');  //画像圧縮png用
@@ -60,6 +62,22 @@ gulp.task('imagemin_png', function() {
     .pipe(gulp.dest(dstGlob)); //納品用ディレクトリにimage書き出し
 });
 
+//キャッシュ対策
+gulp.task('cache', function () {
+  var distHtml = [dir.dist + '{,**/}*.html', '!node_modules/**/*.html']; //作業対象
+  var hash = crypto.randomBytes(8).toString('hex'); //乱数生成
+  return gulp.src(distHtml)
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(replace('.css"','.css?' + hash + '"'))
+    .pipe(replace('.js"','.js?' + hash + '"'))
+    .pipe(replace('.jpg"','.jpg?' + hash + '"'))
+    .pipe(replace('.png"','.png?' + hash + '"'))
+    .pipe(replace('.gif"','.gif?' + hash + '"'))
+    .pipe(gulp.dest(dir.dist));
+});
+
 //localhost:8080を有効化
 gulp.task('connect', function() {
   connect.server({
@@ -85,6 +103,7 @@ gulp.task(
     'sass',
     'imagemin_jpg_gif_svg',
     'imagemin_png',
+    'cache',
     'connect',
     'watch'
   )
