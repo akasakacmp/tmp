@@ -4,8 +4,30 @@
 SCSS
 ----------------------------------------------*/
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
-@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+@font-face {
+  font-family: 'NotoSansCJKjp';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/font/NotoSansCJKjp-Regular.woff') format('woff'),
+       url('/assets/font/NotoSansCJKjp-Regular.eot') format('eot');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NotoSansCJKjp';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/font/NotoSansCJKjp-Medium.woff') format('woff'),
+       url('/assets/font/NotoSansCJKjp-Medium.eot') format('eot');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NotoSansCJKjp';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/font/NotoSansCJKjp-Bold.woff') format('woff'),
+       url('/assets/font/NotoSansCJKjp-Bold.eot') format('eot');
+  font-display: swap;
+}
 
 html, body {
   margin: 0;
