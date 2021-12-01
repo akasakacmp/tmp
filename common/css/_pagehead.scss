@@ -7,13 +7,13 @@ pageHead
   border-bottom: solid 1px #ddd;
   font-size: 1.6rem;
   @include media_query_sp{
-    font-size: calc(32 / #{$calc-sp});
+    font-size: calc(16 / #{$calc-sp});
   }
 }
 .horizontalMunu {
   padding: 10px 0;
   @include media_query_sp{
-    padding: calc(20 / #{$calc-sp}) 0;
+    padding: calc(10 / #{$calc-sp}) 0;
   }
   .container {
     display: flex;
@@ -32,8 +32,8 @@ pageHead
     .hamburger {
       display: none;
       @include media_query_sp{
-        width: calc(50 / #{$calc-sp});
-        height: calc(50 / #{$calc-sp});
+        width: calc(25 / #{$calc-sp});
+        height: calc(25 / #{$calc-sp});
         position: relative;
         border: none;
         padding: 0;
@@ -41,11 +41,11 @@ pageHead
         z-index: 10;
       }
       span {
-        width: calc(50 / #{$calc-sp});
-        height: calc(5.5 / #{$calc-sp});
+        width: calc(25 / #{$calc-sp});
+        height: calc(2.75 / #{$calc-sp});
         margin: 0;
         background-color: #000;
-        border-radius: calc(2.75 / #{$calc-sp});
+        border-radius: calc(1.375 / #{$calc-sp});
         transition: all .4s;
         position: absolute;
         right: 0;
@@ -53,7 +53,7 @@ pageHead
           top: 0;
         }
         &:nth-of-type(2) {
-          top: calc(22.25 / #{$calc-sp});
+          top: calc(11.125 / #{$calc-sp});
         }
         &:nth-of-type(3) {
           bottom: 0;
@@ -62,13 +62,13 @@ pageHead
       &.active {
         span {
           &:nth-of-type(1) {
-            transform: translateY(calc(22.25 / #{$calc-sp})) rotate(-45deg);
+            transform: translateY(calc(11.125 / #{$calc-sp})) rotate(-45deg);
           }
           &:nth-of-type(2) {
             opacity: 0;
           }
           &:nth-of-type(3) {
-            transform: translateY(calc(-22.25 / #{$calc-sp})) rotate(45deg);
+            transform: translateY(calc(-11.125 / #{$calc-sp})) rotate(45deg);
           }
         }
       }

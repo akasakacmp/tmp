@@ -18,8 +18,8 @@ grid
   @include media_query_sp{
 		width: 100%;
     max-width: none;
-    padding-left: calc((#{$glid-space2} * 2) / #{$calc-sp});
-    padding-right: calc((#{$glid-space2} * 2) / #{$calc-sp});
+    padding-left: calc(#{$glid-space2} / #{$calc-sp});
+    padding-right: calc(#{$glid-space2} / #{$calc-sp});
   }
 }
 .container-fluid {
@@ -28,8 +28,8 @@ grid
   padding-left: $glid-space;
   padding-right: $glid-space;
   @include media_query_sp{
-    padding-left: calc((#{$glid-space2} * 2) / #{$calc-sp});
-    padding-right: calc((#{$glid-space2} * 2) / #{$calc-sp});
+    padding-left: calc(#{$glid-space2} / #{$calc-sp});
+    padding-right: calc(#{$glid-space2} / #{$calc-sp});
   }
 }
 .row {
@@ -39,8 +39,8 @@ grid
 	flex-wrap: wrap;
   flex-shrink: 0;
   @include media_query_sp{
-    margin-left: calc((#{-$glid-space2} * 2) / #{$calc-sp});
-    margin-right: calc((#{-$glid-space2} * 2) / #{$calc-sp});
+    margin-left: calc(#{-$glid-space2} / #{$calc-sp});
+    margin-right: calc(#{-$glid-space2} / #{$calc-sp});
   }
   &.flexCenter {
     justify-content: center;
@@ -67,7 +67,7 @@ grid
     width: 100%;
     margin-bottom: $text-margin-bottom;
     @include media_query_sp{
-      margin-bottom: calc((#{$text-margin-bottom2} * 2) / #{$calc-sp});
+      margin-bottom: calc(#{$text-margin-bottom2} / #{$calc-sp});
     }
   }
 }
@@ -83,9 +83,9 @@ grid
 		float: left;
 		@include media_query_sp{
 			width: 100%;
-      margin-bottom: calc((#{$text-margin-bottom2} * 2) / #{$calc-sp});
-      padding-left: calc((#{$glid-space2} * 2) / #{$calc-sp});
-      padding-right: calc((#{$glid-space2} * 2) / #{$calc-sp});
+      margin-bottom: calc(#{$text-margin-bottom2} / #{$calc-sp});
+      padding-left: calc(#{$glid-space2} / #{$calc-sp});
+      padding-right: calc(#{$glid-space2} / #{$calc-sp});
 		}
   }
 }

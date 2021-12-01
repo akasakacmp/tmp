@@ -60,6 +60,99 @@
 <script src="/assets/js/respond.js"></script>
 <![endif]-->
 <script src="//code.jquery.com/jquery-3.3.1.min.js" await></script>
+<script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "headline": "サイト名",
+      "description": "ディスクリプション",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "ホームページURL"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "OGP画像"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "サイト管理者名",
+        "image": "サイト管理者画像"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "サイト管理会社名/サイト名",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "ロゴ画像"
+        }
+      },
+      "datePublished": "作成日付(例:2020-04-01T00:00)",
+      "dateModified": "更新日付(例:2020-05-01T00:00)"
+    }
+  ]
+</script>
+<script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "ページタイトル",
+      "description": "ディスクリプション",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "ページURL"
+      },
+      "image": [
+        "OGP画像(横幅696px以上の1×1の画像URL)",
+        "OGP画像(横幅696px以上の4×3の画像URL)",
+        "OGP画像(横幅696px以上の16×9の画像URL)"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "サイト管理者名"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "サイト管理会社名/サイト名",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "ロゴ画像"
+        }
+      },
+      "datePublished": "作成日付(例:2020-04-01T00:00)",
+      "dateModified": "更新日付(例:2020-04-01T00:00)"
+    }
+  ]
+</script>
+<script type="application/ld+json">
+  [
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "description": "ディスクリプション",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "1階層目(例:/html/)",
+            "name": "1階層目の名前"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "2階層目(例:/html/structured-cheatsheet)",
+            "name": "2階層目の名前"
+          }
+        }
+      ]
+    }
+  ]
+</script>
 </head>
 <body>
 <div id="wrapper">

@@ -21,7 +21,7 @@ $glid-space2:15;
 $maxcol:12;
 $glid-width: $site-width + $glid-space * 2;
 
-$calc-sp: '767 * 100vw';  //例）width: calc(100 / #{$calc-sp});
+$calc-sp: '375 * 100vw';  //例）width: calc(100 / #{$calc-sp});
 
 @mixin media_query_pc{
   @media (min-width: $glid-width + ($glid-space * 2) + 1){

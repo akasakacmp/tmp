@@ -19,14 +19,14 @@ breadcrumb
       list-style: none;
       font-size: 1.2rem;
       @include media_query_sp{
-        font-size: calc(22 / #{$calc-sp});
+        font-size: calc(12 / #{$calc-sp});
       }
       &:after {
         content: ">";
         display: inline-block;
         margin: 0 5px;
         @include media_query_sp{
-          margin: 0 calc(10 / #{$calc-sp});
+          margin: 0 calc(5 / #{$calc-sp});
         }
       }
       &:last-child {
