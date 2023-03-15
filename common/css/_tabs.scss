@@ -31,13 +31,13 @@ style
   display: flex;
   flex-shrink: 0;
   @include media_query_sp{
-    margin: 0 0 calc(30 / #{$calc-sp});
+    margin: 0 0 vw(30);
   }
   li {
     margin: 0 3px 0 0;
     display: inline-block;
     @include media_query_sp{
-      margin: 0 calc(3 / #{$calc-sp}) 0 0;
+      margin: 0 vw(3) 0 0;
     }
   }
   label {
@@ -47,15 +47,15 @@ style
       border: solid 2px rgba($color-key, .1);
       transition-property: border, color;
       @include media_query_sp{
-        padding: calc(10 / #{$calc-sp}) calc(25 / #{$calc-sp});
-        border-radius: calc(4 / #{$calc-sp});
-        border-width: calc(2 / #{$calc-sp});
+        padding: vw(10) vw(25);
+        border-radius: vw(4);
+        border-width: vw(2);
       }
       &:hover {
         border: solid 2px $color-key;
         color: $color-key;
         @include media_query_sp{
-          border-width: calc(4 / #{$calc-sp});
+          border-width: vw(2);
         }
       }
     }
@@ -70,7 +70,7 @@ style
     border: solid 2px $color-key;
     color: $color-key;
     @include media_query_sp{
-      border-width: calc(2 / #{$calc-sp});
+      border-width: vw(2);
     }
   }
 }
@@ -85,8 +85,8 @@ style
     position: relative;
     padding-left: 2.5rem;
     @include media_query_sp{
-      font-size: calc(20 / #{$calc-sp});
-      padding-left: calc(25 / #{$calc-sp});
+      font-size: vw(20);
+      padding-left: vw(25);
     }
     &:hover {
       opacity: .5;
@@ -101,8 +101,8 @@ style
       left: 0;
       top: 50%;
       @include media_query_sp{
-        width: calc(15 / #{$calc-sp});
-        height: calc(1 / #{$calc-sp});
+        width: vw(15);
+        height: vw(1);
       }
     }
     &:after {
@@ -117,8 +117,8 @@ style
       transform: rotate(90deg);
       transition: all 0.2s ease-out 0s;
       @include media_query_sp{
-        width: calc(15 / #{$calc-sp});
-        height: calc(1 / #{$calc-sp});
+        width: vw(15);
+        height: vw(1);
       }
     }
   }

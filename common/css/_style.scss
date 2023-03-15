@@ -8,7 +8,7 @@ style
     position: relative;
     padding-bottom: 5px;
     @include media_query_sp{
-      padding-bottom: calc(5 / #{$calc-sp});
+      padding-bottom: vw(5);
     }
     &:before {
       position: absolute;
@@ -19,7 +19,7 @@ style
       height: 2px;
       background: #ddd;
       @include media_query_sp{
-        height: calc(2 / #{$calc-sp});
+        height: vw(2);
       }
     }
     &:after {
@@ -31,8 +31,8 @@ style
       height: 2px;
       background: $color-key;
       @include media_query_sp{
-        width: calc(50 / #{$calc-sp});
-        height: calc(2 / #{$calc-sp});
+        width: vw(50);
+        height: vw(2);
       }
     }
   }
@@ -41,15 +41,15 @@ style
     background: #ddd;
     color: $color-key;
     @include media_query_sp{
-      padding: calc(5 / #{$calc-sp}) calc(10 / #{$calc-sp});
+      padding: vw(5) vw(10);
     }
   }
   h4 {
     padding-bottom: 2px;
     border-bottom: solid 2px #ddd;
     @include media_query_sp{
-      padding-bottom: calc(2 / #{$calc-sp});
-      border-width: calc(2 / #{$calc-sp});
+      padding-bottom: vw(2);
+      border-width: vw(2);
     }
   }
 }

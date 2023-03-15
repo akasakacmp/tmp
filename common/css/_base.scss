@@ -55,10 +55,9 @@ body.overlay {
   background: #fff;
 }
 figure {
-  margin: 0 0 $text-margin-bottom;
+  margin: 0;
   @include media_query_sp{
     width: 100% !important;
-    margin: 0 0 calc(#{$text-margin-bottom2} / #{$calc-sp});
     text-align: center;
   }
 }
@@ -67,8 +66,8 @@ figcaption {
   font-size: 1.3rem;
   color: lighten($fontcolor-base,40%);
   @include media_query_sp{
-    margin-top: calc(5 / #{$calc-sp});
-    font-size: calc(13 / #{$calc-sp});
+    margin-top: vw(5);
+    font-size: vw(13);
   }
 }
 img {
@@ -87,7 +86,7 @@ a, a img, button {
 section {
   padding: 50px 0;
   @include media_query_sp{
-    padding: calc(50 / #{$calc-sp}) 0;
+    padding: vw(50) 0;
   }
 }
 a {
@@ -109,192 +108,43 @@ iframe {
   max-width: 100%;
 }
 
+
 /*----------------------------------------------
 module
 ----------------------------------------------*/
-.marg0 { margin:0 !important; }
-.padd0 { padding:0 !important; }
-
-.mb0 { margin-bottom: 0 !important; }
-.mb10 {
-  margin-bottom: 10px !important;
-  @include media_query_sp{
-    margin-bottom: calc(10 / #{$calc-sp}) !important;
+$i: 0;
+@while $i < 105 {
+  .mg#{$i} {
+    margin: $i + px !important;
+		@include media_query_sp{
+			margin: vw($i) !important;
+		}
   }
-}
-.mb15 {
-  margin-bottom: 15px !important;
-  @include media_query_sp{
-    margin-bottom: calc(15 / #{$calc-sp}) !important;
+  .mt#{$i} {
+    margin-top: $i + px !important;
+		@include media_query_sp{
+			margin-top: vw($i) !important;
+		}
   }
-}
-.mb20 {
-  margin-bottom: 20px !important;
-  @include media_query_sp{
-    margin-bottom: calc(20 / #{$calc-sp}) !important;
+  .mr#{$i} {
+    margin-right: $i + px !important;
+		@include media_query_sp{
+			margin-right: vw($i) !important;
+		}
   }
-}
-.mb30 {
-  margin-bottom: 30px !important;
-  @include media_query_sp{
-    margin-bottom: calc(30 / #{$calc-sp}) !important;
+  .mb#{$i} {
+    margin-bottom: $i + px !important;
+		@include media_query_sp{
+			margin-bottom: vw($i) !important;
+		}
   }
-}
-.mb40 {
-  margin-bottom: 40px !important;
-  @include media_query_sp{
-    margin-bottom: calc(40 / #{$calc-sp}) !important;
+  .ml#{$i} {
+    margin-left: $i + px !important;
+		@include media_query_sp{
+			margin-left: vw($i) !important;
+		}
   }
-}
-.mb50 {
-  margin-bottom: 50px !important;
-  @include media_query_sp{
-    margin-bottom: calc(50 / #{$calc-sp}) !important;
-  }
-}
-.mb60 {
-  margin-bottom: 60px !important;
-  @include media_query_sp{
-    margin-bottom: calc(60 / #{$calc-sp}) !important;
-  }
-}
-.mb70 {
-  margin-bottom: 70px !important;
-  @include media_query_sp{
-    margin-bottom: calc(70 / #{$calc-sp}) !important;
-  }
-}
-.mb80 {
-  margin-bottom: 80px !important;
-  @include media_query_sp{
-    margin-bottom: calc(80 / #{$calc-sp}) !important;
-  }
-}
-.mb90 {
-  margin-bottom: 90px !important;
-  @include media_query_sp{
-    margin-bottom: calc(90 / #{$calc-sp}) !important;
-  }
-}
-.mb100 {
-  margin-bottom:100px !important;
-  @include media_query_sp{
-    margin-bottom: calc(100 / #{$calc-sp}) !important;
-  }
-}
-
-.mt0 { margin-top: 0 !important; }
-.mt10 {
-  margin-top: 10px !important;
-  @include media_query_sp{
-    margin-top: calc(10 / #{$calc-sp}) !important;
-  }
-}
-.mt20 {
-  margin-top: 20px !important;
-  @include media_query_sp{
-    margin-top: calc(20 / #{$calc-sp}) !important;
-  }
-}
-.mt30 {
-  margin-top: 30px !important;
-  @include media_query_sp{
-    margin-top: calc(30 / #{$calc-sp}) !important;
-  }
-}
-.mt40 {
-  margin-top: 40px !important;
-  @include media_query_sp{
-    margin-top: calc(40 / #{$calc-sp}) !important;
-  }
-}
-.mt50 {
-  margin-top: 50px !important;
-  @include media_query_sp{
-    margin-top: calc(50 / #{$calc-sp}) !important;
-  }
-}
-.mt60 {
-  margin-top: 60px !important;
-  @include media_query_sp{
-    margin-top: calc(60 / #{$calc-sp}) !important;
-  }
-}
-.mt70 {
-  margin-top: 70px !important;
-  @include media_query_sp{
-    margin-top: calc(70 / #{$calc-sp}) !important;
-  }
-}
-.mt80 {
-  margin-top: 80px !important;
-  @include media_query_sp{
-    margin-top: calc(80 / #{$calc-sp}) !important;
-  }
-}
-.mt90 {
-  margin-top: 90px !important;
-  @include media_query_sp{
-    margin-top: calc(90 / #{$calc-sp}) !important;
-  }
-}
-.mt100 {
-  margin-top: 100px !important;
-  @include media_query_sp{
-    margin-top: calc(100 / #{$calc-sp}) !important;
-  }
-}
-
-.ml0 { margin-left: 0 !important; }
-.ml5 {
-  margin-left: 5px !important;
-  @include media_query_sp{
-    margin-left: calc(5 / #{$calc-sp}) !important;
-  }
-}
-.ml10 {
-  margin-left: 10px !important;
-  @include media_query_sp{
-    margin-left: calc(10 / #{$calc-sp}) !important;
-  }
-}
-.ml15 {
-  margin-left: 15px !important;
-  @include media_query_sp{
-    margin-left: calc(15 / #{$calc-sp}) !important;
-  }
-}
-.ml20 {
-  margin-left: 20px !important;
-  @include media_query_sp{
-    margin-left: calc(20 / #{$calc-sp}) !important;
-  }
-}
-
-.mr0 { margin-right: 0 !important; }
-.mr5 {
-  margin-right: 5px !important;
-  @include media_query_sp{
-    margin-right: calc(5 / #{$calc-sp}) !important;
-  }
-}
-.mr10 {
-  margin-right: 10px !important;
-  @include media_query_sp{
-    margin-right: calc(10 / #{$calc-sp}) !important;
-  }
-}
-.mr15 {
-  margin-right: 15px !important;
-  @include media_query_sp{
-    margin-right: calc(15 / #{$calc-sp}) !important;
-  }
-}
-.mr20 {
-  margin-right: 20px !important;
-  @include media_query_sp{
-    margin-right: calc(20 / #{$calc-sp}) !important;
-  }
+  $i: $i + 5;
 }
 
 .txtRed { color: #F00; }
@@ -316,12 +166,12 @@ module
 }
 
 .enclosure {
-	margin: $text-margin-bottom 0;
-	padding: $text-margin-bottom $glid-space;
+	margin: 15px 0;
+	padding: 15px;
 	border: solid 1px $color-base;
   @include media_query_sp{
-    margin: calc(#{$text-margin-bottom2} / #{$calc-sp}) 0;
-    padding: calc(#{$text-margin-bottom2} / #{$calc-sp}) calc(#{$glid-space2} / #{$calc-sp});
+    margin: vw(15) 0;
+    padding: vw(15);
   }
   *:first-child {
     margin-top: 0;
@@ -337,8 +187,8 @@ module
   border-radius: 3px;
   display: inline-block;
   @include media_query_sp{
-    padding: calc(10 / #{$calc-sp});
-    border-radius: calc(3 / #{$calc-sp});
+    padding: vw(10);
+    border-radius: vw(3);
   }
   &:hover, &:focus {
     opacity: .5;
@@ -373,8 +223,8 @@ module
     font-size: 1.2rem;
     line-height: 1;
     @include media_query_sp{
-      padding: calc(10 / #{$calc-sp});
-      font-size: calc(12 / #{$calc-sp});
+      padding: cw(10);
+      font-size: vw(12);
     }
   }
   &.btnL {
@@ -382,8 +232,13 @@ module
     font-size: 2rem;
     line-height: 1;
     @include media_query_sp{
-      padding: calc(10 / #{$calc-sp}) calc(20 / #{$calc-sp});
-      font-size: calc(20 / #{$calc-sp});
+      padding: vw(10) vw(20);
+      font-size: vw(20);
     }
   }
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
 }

@@ -8,9 +8,9 @@ pageFoot
   background: #ddd;
   font-size: 1.6rem;
   @include media_query_sp{
-    margin-top: calc(50 / #{$calc-sp});
-    padding: calc(10 / #{$calc-sp}) 0 calc(20 / #{$calc-sp});
-    font-size: calc(16 / #{$calc-sp});
+    margin-top: vw(50);
+    padding: vw(10) 0 vw(20);
+    font-size: vw(16);
   }
   ul {
     margin: 0;
@@ -39,7 +39,7 @@ pageTop
 	bottom: 50px;
 	right: 0;
   @include media_query_sp{
-    bottom: calc(50 / #{$calc-sp});
+    bottom: vw(50);
   }
   a {
 		width: 40px;
@@ -51,10 +51,10 @@ pageTop
 		font-size: 10px;
 		text-align: center;
     @include media_query_sp{
-      width: calc(40 / #{$calc-sp});
-      height: calc(40 / #{$calc-sp});
-      padding: calc(5 / #{$calc-sp}) 0;
-      font-size: calc(10 / #{$calc-sp});
+      width: vw(40);
+      height: vw(40);
+      padding: vw(5) 0;
+      font-size: vw(10);
     }
 		&:before {
 			content: '';
@@ -68,11 +68,11 @@ pageTop
 			top: -3px;
 			left: 14px;
       @include media_query_sp{
-        width: calc(6 / #{$calc-sp});
-        height: calc(6 / #{$calc-sp});
-        border-width: calc(6 / #{$calc-sp});
-        top: calc(-3 / #{$calc-sp});
-        left: calc(14 / #{$calc-sp});
+        width: vw(6);
+        height: vw(6);
+        border-width: vw(6);
+        top: vw(-3);
+        left: vw(14);
       }
 		}
 		&:hover {

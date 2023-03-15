@@ -23,7 +23,7 @@ body {
     display: inline-block;
     background: #fff;
     @include media_query_sp{
-      padding: calc(20 / #{$calc-sp});
+      padding: vw(20);
     }
   }
   img {
@@ -34,8 +34,8 @@ body {
     margin-top: 5px;
     font-size: 1.2rem;
     @include media_query_sp{
-      margin-top: calc(5 / #{$calc-sp});
-      font-size: calc(12 / #{$calc-sp});
+      margin-top: vw(5);
+      font-size: vw(12);
     }
   }
 }

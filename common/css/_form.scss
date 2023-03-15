@@ -24,11 +24,11 @@ form {
 		border: 1px solid #ccc;
 		border-radius: 4px;
     @include media_query_sp{
-      height: calc(38 / #{$calc-sp});
-      padding: calc(6 / #{$calc-sp}) calc(12 / #{$calc-sp});
-      font-size: calc(16 / #{$calc-sp});
-      line-height: calc(38 / #{$calc-sp});
-      border-radius: calc(4 / #{$calc-sp});
+      height: vw(38);
+      padding: vw(6) vw(12);
+      font-size: vw(16);
+      line-height: vw(38);
+      border-radius: vw(4);
     }
 	}
 	textarea{
@@ -40,9 +40,9 @@ form {
     line-height: 1.6rem;
     appearance: none;
     @include media_query_sp{
-      margin-bottom: calc(5 / #{$calc-sp});
-      font-size: calc(16 / #{$calc-sp});
-      line-height: calc(16 / #{$calc-sp});
+      margin-bottom: vw(5);
+      font-size: vw(16);
+      line-height: vw(16);
     }
 	}
 }
